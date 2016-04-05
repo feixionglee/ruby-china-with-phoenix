@@ -19,3 +19,8 @@ import "phoenix_html"
 // paths "./socket" or full ones "web/static/js/socket".
 
 // import socket from "./socket"
+
+var $ = require("jquery");
+
+console.log($('a'));
+console.log($('a').length);
