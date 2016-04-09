@@ -36,6 +36,7 @@ defmodule Elixirer.Web do
 
       import Elixirer.Router.Helpers
       import Elixirer.Gettext
+      import Elixirer.Auth, only: [authenticate_user: 2]
     end
   end
 
@@ -58,6 +59,8 @@ defmodule Elixirer.Web do
   def router do
     quote do
       use Phoenix.Router
+
+      import Elixirer.Auth, only: [authenticate_user: 2]
     end
   end
 

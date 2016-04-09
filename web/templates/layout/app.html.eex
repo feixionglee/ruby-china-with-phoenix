@@ -12,6 +12,7 @@
   </head>
 
   <body>
+    <%= render Elixirer.SharedView, "header.html", conn: @conn, current_user: @current_user %>
     <div class="container">
       <header class="header">
         <nav role="navigation">

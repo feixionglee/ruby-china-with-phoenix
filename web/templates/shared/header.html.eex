@@ -1,0 +1,32 @@
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">ElixirChina</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href='#'>帖子</a></li>
+        <li><a href='#'>资源</a></li>
+        <li><a href='#'>酷站</a></li>
+        <li><a href='#'>招聘</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <%= if !@current_user do %>
+          <li><a href="/signup"> 注册 </a></li>
+          <li><a href="/signin"> 登录 </a></li>
+        <% end %>
+
+        <%= if @current_user do %>
+          <li><a href="/signout"> 退出 </a></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>

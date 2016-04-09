@@ -1,0 +1,28 @@
+<div class="panel panel-default">
+  <div class="panel-heading">登录</div>
+
+  <div class="panel-body post">
+    <div class="inner post">
+      <%= form_for @conn, session_path(@conn, :create), [as: :session, class: "col-md-6 form-horizontal"], fn f -> %>
+        <div class="form-group">
+          <span class="control-label col-sm-3">用户名</span>
+          <div class="col-sm-9">
+            <%= text_input f, :username, placeholder: "Username", class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <span class="control-label col-sm-3">密码</span>
+          <div class="col-sm-9">
+            <%= password_input f, :password, placeholder: "Password", class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-9 col-sm-offset-3">
+            <%= submit "登录", class: "btn btn-primary" %>
+          </div>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>

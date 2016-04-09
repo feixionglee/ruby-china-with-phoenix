@@ -1,0 +1,39 @@
+<div class="panel panel-default">
+  <div class="panel-heading">用户</div>
+
+  <div class="panel-body userinfo">
+    <div class="media">
+      <div class="media-left">
+        <a href="<%= user_path(@conn, :show, @user.id) %>" class="user_avatar">
+          <%= @user.email %>
+        </a>
+      </div>
+      <div class="media-body reply_content">
+        <h2 class="media-heading"><%= @user.name %></h2>
+        <h4 class="media-heading"><small><%= @user.score %> 积分</small></h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= if @user == @current_user do %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <a href="<%= user_path(@conn, :edit, @current_user.id) %>" class="btn btn-primary">
+        修改密码
+      </a>
+    </div>
+  </div>
+<% end %>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <a href="#">
+      <%= if @user == @current_user do %>
+        查看我的帖子
+      <%= else %>
+        查看<%= @user.name %>的帖子
+      <% end %>
+    </a>
+  </div>
+</div>
