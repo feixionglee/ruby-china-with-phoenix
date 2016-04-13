@@ -27,7 +27,7 @@ defmodule Elixirer.UserController do
         conn
         |> Elixirer.Auth.login(user)
         |> put_flash(:info, "#{user.name} created!")
-        |> redirect(to: user_path(conn, :index))
+        |> redirect(to: root_path(conn, :index))
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
     end

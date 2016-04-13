@@ -10,7 +10,6 @@
       </div>
       <div class="media-body reply_content">
         <h2 class="media-heading"><%= @user.name %></h2>
-        <h4 class="media-heading"><small><%= @user.score %> 积分</small></h4>
       </div>
     </div>
   </div>

@@ -5,22 +5,22 @@ defmodule Elixirer.SessionController do
     render conn, "new.html"
   end
 
-  def create(conn, %{"session" => %{"username" => user, "password" => pass}}) do
-    case Rumbl.Auth.login_by_username_and_pass(conn, user, pass, repo: Repo) do
+  def create(conn, %{"session" => %{"name" => user, "password" => pass}}) do
+    case Elixirer.Auth.login_by_name_and_pass(conn, user, pass, repo: Repo) do
       {:ok, conn} ->
         conn
         |> put_flash(:info, "Welcome back!")
         |> redirect(to: root_path(conn, :index))
       {:error, _reason, conn} ->
         conn
-        |> put_flash(:error, "Invalid username/password combination")
+        |> put_flash(:error, "Invalid name/password combination")
         |> render("new.html")
     end
   end
 
   def delete(conn, _) do
     conn
-    |> Rumbl.Auth.logout()
+    |> Elixirer.Auth.logout()
     |> redirect(to: root_path(conn, :index))
   end
 end

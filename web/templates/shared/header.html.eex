@@ -24,6 +24,7 @@
         <% end %>
 
         <%= if @current_user do %>
+          <li><a href="javascript:;"><%= @current_user.name%></a></li>
           <li><a href="/signout"> 退出 </a></li>
         <% end %>
       </ul>

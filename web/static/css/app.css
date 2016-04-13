@@ -17,6 +17,8 @@
   }
 }
 
+.alert:empty { display: none; }
+
 body {
   background-color: #DBD9DB;
 }

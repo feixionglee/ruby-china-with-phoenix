@@ -24,9 +24,9 @@ defmodule Elixirer.Auth do
 
   import Comeonin.Bcrypt, only: [checkpw: 2, dummy_checkpw: 0]
 
-  def login_by_username_and_pass(conn, username, given_pass, opts) do
+  def login_by_name_and_pass(conn, name, given_pass, opts) do
     repo = Keyword.fetch!(opts, :repo)
-    user = repo.get_by(Elixirer.User, username: username)
+    user = repo.get_by(Elixirer.User, name: name)
 
     cond do
       user && checkpw(given_pass, user.password_hash) ->
