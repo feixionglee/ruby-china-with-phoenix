@@ -1,4 +1,3 @@
-@import "bootstrap.min";
 @import "vars";
 
 @mixin clearfix() {
@@ -17,6 +16,12 @@
 
 
 /* Bootstrap Theme */
+body {
+  background: #e9eaed;
+  color: $black;
+  font-family: "RobotoDraft", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding-top: 65px;
+}
 
 .header {
   .navbar {
