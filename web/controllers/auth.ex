@@ -48,7 +48,7 @@ defmodule Elixirer.Auth do
     else
       conn
       |> put_flash(:error, "You must be logged in to access that page")
-      |> redirect(to: Helpers.root_path(conn))
+      |> redirect(to: Helpers.home_path(conn))
       |> halt()
     end
   end

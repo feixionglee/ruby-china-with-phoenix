@@ -10,7 +10,7 @@ defmodule Elixirer.SessionController do
       {:ok, conn} ->
         conn
         |> put_flash(:info, "Welcome back!")
-        |> redirect(to: root_path(conn, :index))
+        |> redirect(to: home_path(conn, :index))
       {:error, _reason, conn} ->
         conn
         |> put_flash(:error, "Invalid name/password combination")
@@ -21,6 +21,6 @@ defmodule Elixirer.SessionController do
   def delete(conn, _) do
     conn
     |> Elixirer.Auth.logout()
-    |> redirect(to: root_path(conn, :index))
+    |> redirect(to: home_path(conn, :index))
   end
 end

@@ -19,7 +19,7 @@ defmodule Elixirer.Router do
 
     # get "/", PageController, :index
 
-    get "/", HomeController, :index, as: :root
+    get "/", HomeController, :index
 
     resources "/sessions", SessionController, only: [:new, :create, :delete]
     get "/signin", SessionController, :new
@@ -27,6 +27,8 @@ defmodule Elixirer.Router do
 
     resources "/users", UserController
     get "/signup", UserController, :new
+
+    resources "/posts", PostController
   end
 
 
