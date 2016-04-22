@@ -1,0 +1,11 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    New post
+  </div>
+  <div class="panel-body">
+    <%= render "form.html", changeset: @changeset,
+                            action: post_path(@conn, :create) %>
+
+    <%= link "Back", to: post_path(@conn, :index) %>
+  </div>
+</div>
