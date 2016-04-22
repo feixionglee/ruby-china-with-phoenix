@@ -15,6 +15,7 @@
 <%= for post <- @posts do %>
     <tr>
       <td><%= post.user_id %></td>
+      <td><%= post.category %></td>
       <td><%= post.title %></td>
       <td><%= post.content %></td>
 

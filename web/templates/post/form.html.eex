@@ -6,8 +6,15 @@
   <% end %>
 
   <div class="form-group">
-    <%= label f, :title, class: "control-label" %>
-    <%= text_input f, :title, class: "form-control" %>
+    <div class="input-group">
+      <span class="node-select input-group-btn">
+        <%= select f, :category, Elixirer.Post.category, prompt: "选择节点"%>
+
+
+      </span>
+      <%= text_input f, :title, class: "form-control", placeholder: "标题" %>
+    </div>
+    <%= error_tag f, :category %>
     <%= error_tag f, :title %>
   </div>
 
