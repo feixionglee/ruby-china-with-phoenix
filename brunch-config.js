@@ -2,7 +2,7 @@ exports.config = {
   // See http://brunch.io/#documentation for docs.
   files: {
     javascripts: {
-      joinTo: "js/app.js"
+      joinTo: "js/app.js",
 
       // To use a separate vendor.js bundle, specify two files path
       // https://github.com/brunch/brunch/blob/stable/docs/config.md#files
@@ -10,13 +10,21 @@ exports.config = {
       //
       // To change the order of concatenation of files, explicitly mention here
       // https://github.com/brunch/brunch/tree/master/docs#concatenation
+      order: {
+        before: [
+          "web/static/vendor/js/jquery",
+          "web/static/vendor/js/bootstrap.js",
+          "web/static/vendor/js/underscore.js",
+          "web/static/vendor/js/backbone.js"
+        ]
+      }
     },
     stylesheets: {
       joinTo: "css/app.css",
       order: {
         before: [
-          "web/static/vendor/css/boostrap.min.css",
-          "web/static/vendor/css/vars.scss"
+          "web/static/vendor/css/boostrap.css",
+          "web/static/css/vars.scss"
         ]
       }
     },
@@ -62,6 +70,10 @@ exports.config = {
     enabled: true,
     // Whitelist the npm deps to be pulled in as front-end assets.
     // All other deps in package.json will be excluded from the bundle.
-    whitelist: ["phoenix", "phoenix_html", "jquery", "boostrap"]
+    globals: {
+      $: 'jquery',
+      jQuery: 'jquery'
+    },
+    whitelist: ["phoenix", "phoenix_html"]
   }
 };

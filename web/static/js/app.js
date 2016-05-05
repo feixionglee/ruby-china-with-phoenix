@@ -20,7 +20,5 @@ import "phoenix_html"
 
 // import socket from "./socket"
 
-var $ = require("jquery");
+import $ from "jquery"
 
-console.log($('a'));
-console.log($('a').length);
