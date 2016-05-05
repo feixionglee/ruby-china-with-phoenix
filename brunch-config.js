@@ -13,9 +13,12 @@ exports.config = {
       order: {
         before: [
           "web/static/vendor/js/jquery",
-          "web/static/vendor/js/bootstrap.js",
           "web/static/vendor/js/underscore.js",
-          "web/static/vendor/js/backbone.js"
+          "web/static/vendor/js/backbone.js",
+          "web/static/vendor/js/bootstrap.js",
+          "web/static/vendor/js/bootstrap-select.js",
+          "web/static/vendor/js/bootstrap-select-i18n/defaults-en_US.js",
+          "web/static/vendor/js/bootstrap-select-i18n/defaults-zh_CN.js"
         ]
       }
     },
@@ -24,6 +27,7 @@ exports.config = {
       order: {
         before: [
           "web/static/vendor/css/boostrap.css",
+          "web/static/vendor/css/bootstrap-select.css",
           "web/static/css/vars.scss"
         ]
       }
