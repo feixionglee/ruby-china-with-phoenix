@@ -9,7 +9,7 @@
 
   <li>
     <strong>Category:</strong>
-    <%= @post.category_id %>
+    <%= @post.category %>
   </li>
 
   <li>

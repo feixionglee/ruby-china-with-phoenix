@@ -8,7 +8,7 @@
   <div class="form-group">
     <div class="input-group">
       <span class="node-select input-group-btn">
-        <%= select f, :category, Elixirer.Post.category, prompt: "选择节点"%>
+        <%= select f, :category, @categories, prompt: "选择节点"%>
 
 
       </span>

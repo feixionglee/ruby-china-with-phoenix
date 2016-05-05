@@ -3,7 +3,7 @@
     New post
   </div>
   <div class="panel-body">
-    <%= render "form.html", changeset: @changeset,
+    <%= render "form.html", changeset: @changeset, categories: @categories,
                             action: post_path(@conn, :create) %>
 
     <%= link "Back", to: post_path(@conn, :index) %>

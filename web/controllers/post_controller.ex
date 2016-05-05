@@ -3,20 +3,44 @@ defmodule Elixirer.PostController do
 
   alias Elixirer.Post
 
+  plug :authenticate_user when action in [:new, :create, :edit, :update]
+
   plug :scrub_params, "post" when action in [:create, :update]
 
-  def index(conn, _params) do
+  plug :load_categories when action in [:new, :create, :edit, :update]
+
+  def index(conn, _params, user) do
     posts = Repo.all(Post)
+
     render(conn, "index.html", posts: posts)
   end
 
-  def new(conn, _params) do
-    changeset = Post.changeset(%Post{})
+  def index(conn, %{"category" => [category]}) do
+    posts = Repo.all(from a in Post, where: a.category == ^category)
+
+    render(conn, "index.html", posts: posts)
+  end
+
+  def index(conn, _params) do
+    posts = Repo.all(Post)
+
+    render(conn, "index.html", posts: posts)
+  end
+
+  def new(conn, _params, user) do
+    changeset =
+      user
+      |> build_assoc(:posts)
+      |> Post.changeset(%Post{})
+
     render(conn, "new.html", changeset: changeset)
   end
 
-  def create(conn, %{"post" => post_params}) do
-    changeset = Post.changeset(%Post{}, post_params)
+  def create(conn, %{"post" => post_params}, user) do
+    changeset =
+      user
+      |> build_assoc(:posts)
+      |> Post.changeset(%Post{}, post_params)
 
     case Repo.insert(changeset) do
       {:ok, _post} ->
@@ -63,5 +87,15 @@ defmodule Elixirer.PostController do
     conn
     |> put_flash(:info, "Post deleted successfully.")
     |> redirect(to: post_path(conn, :index))
+  end
+
+  def action(conn, _) do
+    apply(__MODULE__, action_name(conn),
+        [conn, conn.params, conn.assigns.current_user])
+  end
+
+  defp load_categories(conn, _) do
+    categories = Post.category
+    assign(conn, :categories, categories)
   end
 end

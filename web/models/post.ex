@@ -4,16 +4,16 @@ defmodule Elixirer.Post do
   schema "posts" do
     field :title, :string
     field :content, :string
-    field :category, :integer, default: 0
+    field :category, :string
     belongs_to :user, Elixirer.User
 
     timestamps
   end
 
-  @category %{
-    "新手问题" => 1,
-    "招聘" => 2
-  }
+  @category [
+    "newbie",
+    "jobs"
+  ]
   def category, do: @category
 
 
@@ -31,5 +31,6 @@ defmodule Elixirer.Post do
     |> cast(params, @required_fields, @optional_fields)
     |> validate_length(:title, min: 10, max: 60)
     |> validate_length(:content, min: 10)
+    |> assoc_constraint(:category)
   end
 end

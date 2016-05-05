@@ -20,9 +20,11 @@
       <td><%= post.content %></td>
 
       <td class="text-right">
-        <%= link "Show", to: post_path(@conn, :show, post), class: "btn btn-default btn-xs" %>
-        <%= link "Edit", to: post_path(@conn, :edit, post), class: "btn btn-default btn-xs" %>
-        <%= link "Delete", to: post_path(@conn, :delete, post), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+        <%= if @current_user do %>
+          <%= link "Show", to: post_path(@conn, :show, post), class: "btn btn-default btn-xs" %>
+          <%= link "Edit", to: post_path(@conn, :edit, post), class: "btn btn-default btn-xs" %>
+          <%= link "Delete", to: post_path(@conn, :delete, post), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+        <%= end %>
       </td>
     </tr>
 <% end %>

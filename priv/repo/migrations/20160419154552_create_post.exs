@@ -5,8 +5,8 @@ defmodule Elixirer.Repo.Migrations.CreatePost do
     create table(:posts) do
       add :title, :string
       add :content, :text
+      add :category, :string
       add :user_id, references(:users, on_delete: :nothing)
-      add :category, :integer, default: 0, null: false
 
       timestamps
     end

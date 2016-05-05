@@ -29,6 +29,7 @@ defmodule Elixirer.Router do
     get "/signup", UserController, :new
 
     resources "/posts", PostController
+    get "/*category", PostController, :index
   end
 
 
