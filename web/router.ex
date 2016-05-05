@@ -31,13 +31,13 @@ defmodule Elixirer.Router do
     resources "/posts", PostController
     get "/posts/*category", PostController, :index
 
-    resources "/nodes", NodeController
+    resources "/nodes", NodeController, only: [:show]
   end
 
-  scope "/admin", Elixirer do
+  scope "/admin", alias: Elixirer.Admin, as: :admin  do
     pipe_through [:browser, :authenticate_user]
 
-    get "/", AdminController, :index
+    get "/", BaseController, :index
 
     resources "/posts", PostController
     resources "/nodes", NodeController

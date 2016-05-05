@@ -1,4 +1,4 @@
-defmodule Elixirer.AdminController do
+defmodule Elixirer.Admin.HomeController do
   use Elixirer.Web, :controller
 
   def index(conn, _params) do

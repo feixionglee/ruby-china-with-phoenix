@@ -19,5 +19,5 @@
 
 </ul>
 
-<%= link "Edit", to: node_path(@conn, :edit, @node) %>
-<%= link "Back", to: node_path(@conn, :index) %>
+<%= link "Edit", to: admin_node_path(@conn, :edit, @node) %>
+<%= link "Back", to: admin_node_path(@conn, :index) %>

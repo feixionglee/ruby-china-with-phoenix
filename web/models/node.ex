@@ -9,12 +9,17 @@ defmodule Elixirer.Node do
     timestamps
   end
 
+
+  @required_fields [:title, :slug]
+  @optional_fields []
+
   @doc """
   Builds a changeset based on the `struct` and `params`.
   """
+
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:title, :slug, :posts_count])
-    |> validate_required([:title, :slug, :posts_count])
+    |> cast(params, @required_fields)
+    |> validate_required([:title, :slug])
   end
 end
