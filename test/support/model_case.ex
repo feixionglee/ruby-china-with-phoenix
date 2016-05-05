@@ -26,8 +26,10 @@ defmodule Elixirer.ModelCase do
   end
 
   setup tags do
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Elixirer.Repo)
+
     unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(Elixirer.Repo, [])
+      Ecto.Adapters.SQL.Sandbox.mode(Elixirer.Repo, {:shared, self()})
     end
 
     :ok
