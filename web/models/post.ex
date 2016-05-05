@@ -5,6 +5,7 @@ defmodule Elixirer.Post do
     field :title, :string
     field :content, :string
     field :category, :string
+    field :is_great, :boolean
     belongs_to :user, Elixirer.User
 
     timestamps

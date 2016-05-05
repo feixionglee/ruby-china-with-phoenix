@@ -29,9 +29,19 @@ defmodule Elixirer.Router do
     get "/signup", UserController, :new
 
     resources "/posts", PostController
-    get "/*category", PostController, :index
+    get "/posts/*category", PostController, :index
+
+    resources "/nodes", NodeController
   end
 
+  scope "/admin", Elixirer do
+    pipe_through [:browser, :authenticate_user]
+
+    get "/", AdminController, :index
+
+    resources "/posts", PostController
+    resources "/nodes", NodeController
+  end
 
   # Other scopes may use custom stacks.
   # scope "/api", Elixirer do

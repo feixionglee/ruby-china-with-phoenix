@@ -1,0 +1,23 @@
+<h2>Show node</h2>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @node.title %>
+  </li>
+
+  <li>
+    <strong>Slug:</strong>
+    <%= @node.slug %>
+  </li>
+
+  <li>
+    <strong>Posts count:</strong>
+    <%= @node.posts_count %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: node_path(@conn, :edit, @node) %>
+<%= link "Back", to: node_path(@conn, :index) %>
