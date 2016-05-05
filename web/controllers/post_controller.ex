@@ -31,7 +31,7 @@ defmodule Elixirer.PostController do
     changeset =
       user
       |> build_assoc(:posts)
-      |> Post.changeset(%Post{})
+      |> Post.changeset()
 
     render(conn, "new.html", changeset: changeset)
   end
@@ -40,7 +40,7 @@ defmodule Elixirer.PostController do
     changeset =
       user
       |> build_assoc(:posts)
-      |> Post.changeset(%Post{}, post_params)
+      |> Post.changeset(post_params)
 
     case Repo.insert(changeset) do
       {:ok, _post} ->

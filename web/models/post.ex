@@ -32,6 +32,5 @@ defmodule Elixirer.Post do
     |> cast(params, @required_fields, @optional_fields)
     |> validate_length(:title, min: 10, max: 60)
     |> validate_length(:content, min: 10)
-    |> assoc_constraint(:category)
   end
 end
