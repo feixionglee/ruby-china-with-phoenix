@@ -3,20 +3,22 @@ defmodule Elixirer.PostController do
 
   alias Elixirer.Post
 
-  plug :authenticate_user when action in [:new, :create, :edit, :update]
+  plug :authenticate_user  when action in [:new, :create, :edit, :update]
+  plug :load_categories when action in [:new, :create, :edit, :update]
 
   plug :scrub_params, "post" when action in [:create, :update]
 
-  plug :load_categories when action in [:new, :create, :edit, :update]
-
   def index(conn, _params, user) do
-    posts = Repo.all(Post)
+    posts = Repo.all from p in Post,
+                        preload: [:user]
 
     render(conn, "index.html", posts: posts)
   end
 
   def index(conn, %{"category" => [category]}) do
-    posts = Repo.all(from a in Post, where: a.category == ^category)
+    posts = Repo.all from a in Post,
+                        where: a.category == ^category,
+                        preload: [:user]
 
     render(conn, "index.html", posts: posts)
   end
@@ -51,6 +53,7 @@ defmodule Elixirer.PostController do
         render(conn, "new.html", changeset: changeset)
     end
   end
+
 
   def show(conn, %{"id" => id}, user) do
     post = Repo.get!(Post, id)

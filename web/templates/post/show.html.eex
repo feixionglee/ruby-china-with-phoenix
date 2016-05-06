@@ -24,5 +24,7 @@
 
 </ul>
 
-<%= link "Edit", to: post_path(@conn, :edit, @post) %>
-<%= link "Back", to: post_path(@conn, :index) %>
+<% if @current_user.id == @post.user_id do %>
+  <%= link "Edit", to: post_path(@conn, :edit, @post) %>
+  <%= link "Back", to: post_path(@conn, :index) %>
+<% end %>
