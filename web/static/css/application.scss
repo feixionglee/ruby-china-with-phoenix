@@ -158,6 +158,18 @@ body {
   }
 }
 
+#main-nav-menu {
+  .navbar-nav {
+    margin: 0px;
+    a { color: #fff; transition: all .2s ease-in-out; }
+    li a:hover,
+    li.active a,
+    li.active a:focus,
+    li.active a:hover { border-bottom:3px solid $red; color: #F1632B; background: transparent; padding-bottom: 12px;}
+  }
+}
+
+
 .sidebar { padding-left: 0px; }
 
 .dropdown-menu { border-color: #FFF; border-radius: 2px;   border-top-left-radius: 0;

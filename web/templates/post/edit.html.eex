@@ -1,6 +1,11 @@
-<h2>Edit post</h2>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Edit post
+  </div>
+  <div class="panel-body">
+    <%= render "form.html", changeset: @changeset, categories: @categories,
+                            action: post_path(@conn, :update, @post) %>
 
-<%= render "form.html", changeset: @changeset, categories: @categories,
-                        action: post_path(@conn, :update, @post) %>
-
-<%= link "Back", to: post_path(@conn, :index) %>
+    <%= link "Back", to: post_path(@conn, :index) %>
+  </div>
+</div>
