@@ -24,7 +24,7 @@
 
 </ul>
 
-<% if @current_user.id == @post.user_id do %>
+<%= if @current_user && @current_user == @post.user do %>
   <%= link "Edit", to: post_path(@conn, :edit, @post) %>
   <%= link "Back", to: post_path(@conn, :index) %>
 <% end %>
