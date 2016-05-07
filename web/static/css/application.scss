@@ -64,11 +64,16 @@ body {
   #main-nav-menu {
     .navbar-nav {
       margin: 0px;
-      a { color: #333; transition: all .2s ease-in-out; }
+      a { color: #fff; transition: all .2s ease-in-out; }
       li a:hover,
       li.active a,
       li.active a:focus,
       li.active a:hover { border-bottom:3px solid $red; color: $red; background: transparent; padding-bottom: 12px;}
+    }
+
+    .navbar-nav .dropdown{
+      margin: 0px;
+      a { transition: all .2s ease-in-out; }
     }
   }
 
@@ -157,18 +162,6 @@ body {
 
   }
 }
-
-#main-nav-menu {
-  .navbar-nav {
-    margin: 0px;
-    a { color: #fff; transition: all .2s ease-in-out; }
-    li a:hover,
-    li.active a,
-    li.active a:focus,
-    li.active a:hover { border-bottom:3px solid $red; color: #F1632B; background: transparent; padding-bottom: 12px;}
-  }
-}
-
 
 .sidebar { padding-left: 0px; }
 
@@ -978,3 +971,18 @@ footer {
 
 .dz-preview { display: none; }
 textarea.div-dropzone-focus { border-color: #BBE1C9; background: #fafafa; }
+
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  color: #fff;
+  background-color: $phoenixDark;
+}
+
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+  color: #fff;
+  background-color: $phoenixLight;
+}

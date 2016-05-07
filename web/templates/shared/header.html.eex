@@ -24,10 +24,26 @@
         <% end %>
 
         <%= if @current_user do %>
-          <li><a href="javascript:;"><%= @current_user.name%></a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+              <%= @current_user.name%>
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li class="">
+                <a href="/dancing"></a>
+                <%= link "My home page", to: user_path(@conn, :edit, @current_user) %>
+              </li>
+              <li class=""><div class="divider"></div></li>
+              <li class=""><a href="/account/edit">Account Profile</a></li>
+              <li class=""><a href="/notes">Notes</a></li><li class=""><a href="/dancing/favorites">Favorites</a></li>
+            </ul>
+          </li>
           <li><a href="/signout"> 退出 </a></li>
         <% end %>
       </ul>
     </div>
+
+
   </div>
 </nav>

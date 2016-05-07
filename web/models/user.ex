@@ -6,13 +6,14 @@ defmodule Elixirer.User do
     field :email, :string
     field :password, :string, virtual: true
     field :password_hash, :string
+    field :avatar, :string
     has_many :posts, Elixirer.Post
 
     timestamps
   end
 
   @required_fields ~w(name email password)
-  @optional_fields ~w()
+  @optional_fields ~w(avatar)
 
   @doc """
   Creates a changeset based on the `model` and `params`.
