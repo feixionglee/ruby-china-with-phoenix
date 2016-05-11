@@ -1,11 +1,18 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    Edit post
-  </div>
-  <div class="panel-body">
-    <%= render "form.html", changeset: @changeset, categories: @categories,
-                            action: post_path(@conn, :update, @post) %>
+<div class="row">
+  <div class="col-md-9">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Edit post
+      </div>
+      <div class="panel-body">
+        <%= render "form.html", changeset: @changeset, categories: @categories,
+                                action: post_path(@conn, :update, @post) %>
 
-    <%= link "Back", to: post_path(@conn, :index) %>
+        <%= link "Back", to: post_path(@conn, :index) %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 sidebar">
+    <%= render "_sidebar.html" %>
   </div>
 </div>
