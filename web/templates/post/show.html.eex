@@ -7,7 +7,7 @@
           <div class="info">
             <a class="node" href="/topics/node2">Rails</a>
              ·
-            <a data-author="true" data-name="JackyZhou" href="/dudu_zzzz">dudu_zzzz</a>
+            <a data-author="true" data-name="JackyZhou" href="/dudu_zzzz"><%= @post.user.name %></a>
              ·
             Created at <abbr class="timeago" title="2016-04-15T13:11:10+08:00"> 21 days ago</abbr>
                ·
@@ -17,7 +17,11 @@
           </div>
         </div>
         <div class="avatar media-right">
-          <a href="/dudu_zzzz"><img class="media-object avatar-48" src="https://ruby-china-files.b0.upaiyun.com/user/large_avatar/19766.jpg" alt="19766"></a>
+          <a href="/dudu_zzzz">
+          <%= link to: user_path(@conn, :show, @post.user) do %>
+            <img class="media-object avatar-48" src=<%=Elixirer.User.avatar_url(@post.user)%> alt="19766">
+
+          <% end %>
         </div>
       </div>
 

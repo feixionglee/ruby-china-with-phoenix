@@ -42,6 +42,10 @@ defmodule Elixirer.User do
     |> put_pass_hash()
   end
 
+  def avatar_url(model) do
+    Elixirer.Photo.remote_url(model.avatar)
+  end
+
   defp put_pass_hash(changeset) do
     case changeset do
       %Ecto.Changeset{valid?: true, changes: %{password: pass}} ->

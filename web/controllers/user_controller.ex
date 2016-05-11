@@ -3,12 +3,7 @@ defmodule Elixirer.UserController do
   alias Elixirer.User
 
   # plug :authenticate when action in [:index, :show]
-  plug :authenticate_user when action in [:index, :show]
-
-  def index(conn, _params) do
-    users = Repo.all(User)
-    render conn, "index.html", users: users
-  end
+  plug :authenticate_user when action in [:edit, :update]
 
   def show(conn, %{"id" => id}) do
     user = Repo.get(Elixirer.User, id)
