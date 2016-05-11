@@ -1,5 +1,8 @@
+require IEx
 defmodule Elixirer.User do
   use Elixirer.Web, :model
+
+  alias Elixirer.QiniuService
 
   schema "users" do
     field :name, :string
@@ -21,9 +24,10 @@ defmodule Elixirer.User do
   If no params are provided, an invalid changeset is returned
   with no validation performed.
   """
-  def changeset(model, params \\ :empty) do
+  def changeset(model, params \\ %{}) do
+    params = QiniuService.photo_process(params, :avatar)
     model
-    |> cast(params, ~w(name email), [])
+    |> cast(params, ~w(name email), ~w(avatar))
     |> validate_length(:name, min: 4, max: 20)
     |> validate_format(:email, ~r/@/)
     |> unique_constraint(:name)

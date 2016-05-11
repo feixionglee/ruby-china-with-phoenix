@@ -3,4 +3,7 @@ defmodule Elixirer.UserView do
 
   alias Elixirer.User
 
+  def avatar_url(user) do
+    Elixirer.Photo.remote_url(user.avatar)
+  end
 end

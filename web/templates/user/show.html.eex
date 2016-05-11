@@ -11,6 +11,9 @@
       <div class="media-body reply_content">
         <h2 class="media-heading"><%= @user.name %></h2>
       </div>
+      <div class="media-body reply_content">
+        <img src=<%= avatar_url(@user)%> />
+      </div>
     </div>
   </div>
 </div>

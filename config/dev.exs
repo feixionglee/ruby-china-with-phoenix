@@ -40,3 +40,9 @@ config :elixirer, Elixirer.Repo,
   database: "elixirer_dev",
   hostname: "localhost",
   pool_size: 10
+
+
+config :qiniu, Qiniu,
+  access_key: "-H3ZcpN0XxKjaNKKdyI-l1LW0i69tdJXbKA0Zmo-",
+  secret_key: "I8MMFZrYAnJNmIxLAI3obLgHzO9fyOydNnR7F0Ep",
+  cdn_host: "http://o6tiaeexk.bkt.clouddn.com"

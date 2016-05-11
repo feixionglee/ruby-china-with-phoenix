@@ -19,7 +19,7 @@ defmodule Elixirer.Mixfile do
   def application do
     [mod: {Elixirer, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :comeonin]]
+                    :phoenix_ecto, :postgrex, :comeonin, :qiniu]]
   end
 
   # Specifies which paths to compile per environment.
@@ -38,7 +38,8 @@ defmodule Elixirer.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.9"},
      {:cowboy, "~> 1.0"},
-     {:comeonin, "~> 2.0"}]
+     {:comeonin, "~> 2.0"},
+     {:qiniu,"~> 0.2.3", git: "https://github.com/feixionglee/qiniu.git"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.
