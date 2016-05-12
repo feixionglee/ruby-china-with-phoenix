@@ -986,3 +986,6 @@ textarea.div-dropzone-focus { border-color: #BBE1C9; background: #fafafa; }
   color: #fff;
   background-color: $phoenixLight;
 }
+
+.form-control.editable {height: 400px;}
+.form-control.editable.medium-editor-hidden{display: none;}

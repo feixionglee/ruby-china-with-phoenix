@@ -17,7 +17,8 @@ exports.config = {
           "web/static/vendor/js/bootstrap.js",
           "web/static/vendor/js/bootstrap-select.js",
           "web/static/vendor/js/bootstrap-select-i18n/defaults-en_US.js",
-          "web/static/vendor/js/bootstrap-select-i18n/defaults-zh_CN.js"
+          "web/static/vendor/js/bootstrap-select-i18n/defaults-zh_CN.js",
+          "web/static/vendor/js/medium-editor.js"
         ]
       }
     },
@@ -27,7 +28,9 @@ exports.config = {
         before: [
           "web/static/vendor/css/boostrap.css",
           "web/static/vendor/css/bootstrap-select.css",
-          "web/static/css/vars.scss"
+          "web/static/css/vars.scss",
+          "web/static/vendor/cs/medium-editor.css",
+          "web/static/vendor/cs/medium-editor-theme-default.css"
         ]
       }
     },

@@ -22,3 +22,4 @@ import "phoenix_html"
 
 import $ from "jquery"
 
+new MediumEditor('.editable')
