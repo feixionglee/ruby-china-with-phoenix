@@ -25,7 +25,7 @@
         </div>
       </div>
 
-      <div class="panel-body markdown">
+      <div class="panel-body">
         <article><%= raw @post.content %></article>
       </div>
 

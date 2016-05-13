@@ -18,7 +18,13 @@ exports.config = {
           "web/static/vendor/js/bootstrap-select.js",
           "web/static/vendor/js/bootstrap-select-i18n/defaults-en_US.js",
           "web/static/vendor/js/bootstrap-select-i18n/defaults-zh_CN.js",
-          "web/static/vendor/js/medium-editor.js"
+          "web/static/vendor/js/medium-editor.js",
+          "web/static/vendor/js/handlebars.runtime.js",
+          "web/static/vendor/js/jquery-sortable.js",
+          "web/static/vendor/js/jquery.ui.widget.js",
+          "web/static/vendor/js/jquery.iframe-transport.js",
+          "web/static/vendor/js/jquery.fileupload.js",
+          "web/static/vendor/js/medium-editor-insert-plugin.js"
         ]
       }
     },
@@ -28,9 +34,11 @@ exports.config = {
         before: [
           "web/static/vendor/css/boostrap.css",
           "web/static/vendor/css/bootstrap-select.css",
+          "web/static/vendor/css/font-awesome.css",
           "web/static/css/vars.scss",
           "web/static/vendor/cs/medium-editor.css",
-          "web/static/vendor/cs/medium-editor-theme-default.css"
+          "web/static/vendor/cs/medium-editor-theme-default.css",
+          "web/static/vendor/cs/medium-editor-insert-plugin.css"
         ]
       }
     },
@@ -79,7 +87,6 @@ exports.config = {
     globals: {
       $: 'jquery',
       jQuery: 'jquery'
-    },
-    whitelist: ["phoenix", "phoenix_html"]
+    }
   }
 };

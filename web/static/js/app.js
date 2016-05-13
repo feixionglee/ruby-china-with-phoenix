@@ -22,4 +22,16 @@ import "phoenix_html"
 
 import $ from "jquery"
 
-new MediumEditor('.editable')
+var editor = new MediumEditor('.editable', {
+  toolbar: {
+    buttons: ['bold', 'italic', 'underline', 'anchor', 'strikethrough', 'anchor', 'quote', 'removeFormat']
+  }
+});
+
+$(function () {
+  console.log('asdas');
+
+  $('.editable').mediumInsert({
+      editor: editor
+  });
+});
