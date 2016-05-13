@@ -12,10 +12,12 @@
 
     <div class="collapse navbar-collapse" id="main-nav-menu">
       <ul class="nav navbar-nav">
-        <li class="active"><a href='/posts'>帖子</a></li>
-        <li><a href='#'>资源</a></li>
-        <li><a href='#'>问答</a></li>
-        <li><a href='#'>招聘</a></li>
+        <%= state_link @conn, "帖子", active: :posts, to: "/posts" %>
+        <%= state_link @conn, "资源", active: :wiki, to: "/wiki" %>
+        <li><a href='/jobs'>工作机会</a></li>
+        <li><a href='/meetup'>聚会</a></li>
+        <li><a href='/ask'>问答</a></li>
+        <%= state_link @conn, "热门", active: :nodes, to: "/nodes" %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <%= if !@current_user do %>

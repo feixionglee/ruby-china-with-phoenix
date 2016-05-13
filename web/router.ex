@@ -8,6 +8,7 @@ defmodule Elixirer.Router do
     plug :protect_from_forgery
     plug :put_secure_browser_headers
     plug Elixirer.Auth, repo: Elixirer.Repo
+    plug Elixirer.ActiveTab
   end
 
   pipeline :api do
