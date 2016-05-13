@@ -1,3 +1,5 @@
+require IEx
+
 defmodule Elixirer.PostController do
   use Elixirer.Web, :controller
 
@@ -8,14 +10,7 @@ defmodule Elixirer.PostController do
 
   plug :scrub_params, "post" when action in [:create, :update]
 
-  def index(conn, _params, user) do
-    posts = Repo.all from p in Post,
-                        preload: [:user]
-
-    render(conn, "index.html", posts: posts)
-  end
-
-  def index(conn, %{"category" => [category]}) do
+  def index(conn, %{"category" => category}, user) do
     posts = Repo.all from a in Post,
                         where: a.category == ^category,
                         preload: [:user]
@@ -23,8 +18,9 @@ defmodule Elixirer.PostController do
     render(conn, "index.html", posts: posts)
   end
 
-  def index(conn, _params) do
-    posts = Repo.all(Post)
+  def index(conn, _params, user) do
+    posts = Repo.all from p in Post,
+                        preload: [:user]
 
     render(conn, "index.html", posts: posts)
   end

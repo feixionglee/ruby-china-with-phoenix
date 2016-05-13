@@ -29,9 +29,9 @@ defmodule Elixirer.Router do
     get "/signup", UserController, :new
 
     resources "/posts", PostController
-    get "/posts/*category", PostController, :index
+    get "/categories/:category", PostController, :index, as: :category
 
-    resources "/nodes", NodeController, only: [:show]
+    resources "/nodes", NodeController, only: [:index, :show]
   end
 
   scope "/admin", alias: Elixirer.Admin, as: :admin  do
