@@ -14,9 +14,9 @@
       <ul class="nav navbar-nav">
         <%= state_link @conn, "帖子", active: :posts, to: "/posts" %>
         <%= state_link @conn, "资源", active: :wiki, to: "/wiki" %>
-        <li><a href='/jobs'>工作机会</a></li>
-        <li><a href='/meetup'>聚会</a></li>
-        <li><a href='/ask'>问答</a></li>
+        <%= state_link @conn, "工作机会", active: :jobs, to: "/categories/jobs" %>
+        <%= state_link @conn, "聚会", active: :meetup, to: "/categories/meetup" %>
+        <%= state_link @conn, "问答", active: :ask, to: "/categories/ask" %>
         <%= state_link @conn, "热门", active: :nodes, to: "/nodes" %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
