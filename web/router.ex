@@ -18,7 +18,8 @@ defmodule Elixirer.Router do
   scope "/", Elixirer do
     pipe_through :browser # Use the default browser stack
 
-    # get "/", PageController, :index
+    get "/wiki", PageController, :index
+    get "/wiki/:title", PageController, :show
 
     get "/", HomeController, :index
 

@@ -5,6 +5,7 @@
   "cowlib": {:hex, :cowlib, "1.0.2"},
   "db_connection": {:hex, :db_connection, "0.2.5"},
   "decimal": {:hex, :decimal, "1.1.2"},
+  "earmark": {:git, "https://github.com/pragdave/earmark.git", "a9e60184fc4a887fadd628257ed1ef5ae7ef440f", []},
   "ecto": {:hex, :ecto, "2.0.0-rc.4"},
   "fs": {:hex, :fs, "0.9.2"},
   "gettext": {:hex, :gettext, "0.10.0"},

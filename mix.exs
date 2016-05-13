@@ -39,7 +39,8 @@ defmodule Elixirer.Mixfile do
      {:gettext, "~> 0.9"},
      {:cowboy, "~> 1.0"},
      {:comeonin, "~> 2.0"},
-     {:qiniu,"~> 0.2.3", git: "https://github.com/feixionglee/qiniu.git"}]
+     {:qiniu,"~> 0.2.3", git: "https://github.com/feixionglee/qiniu.git"},
+     {:earmark, "~> 0.2.2", git: "https://github.com/pragdave/earmark.git"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.
