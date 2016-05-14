@@ -1,5 +1,3 @@
-require IEx
-
 defmodule Elixirer.PostController do
   use Elixirer.Web, :controller
 
