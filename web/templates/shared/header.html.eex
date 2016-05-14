@@ -1,51 +1,53 @@
-<nav class="navbar navbar-inverse">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-menu">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/">ElixirChina</a>
+<header class="header">
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-menu">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Erlang & Elixir</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="main-nav-menu">
+        <ul class="nav navbar-nav">
+          <%= state_link @conn, "帖子", active: :posts, to: "/posts" %>
+          <%= state_link @conn, "资源", active: :wiki, to: "/wiki" %>
+          <%= state_link @conn, "问答", active: :ask, to: "/categories/ask" %>
+          <%= state_link @conn, "工作机会", active: :jobs, to: "/categories/jobs" %>
+          <%= state_link @conn, "线下活动", active: :meetup, to: "/categories/meetup" %>
+          <%= state_link @conn, "热门", active: :nodes, to: "/nodes" %>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <%= if !@current_user do %>
+            <li><a href="/signup"> 注册 </a></li>
+            <li><a href="/signin"> 登录 </a></li>
+          <% end %>
+
+          <%= if @current_user do %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                <%= @current_user.name%>
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                <li class="">
+                  <a href="/dancing"></a>
+                  <%= link "My home page", to: user_path(@conn, :edit, @current_user) %>
+                </li>
+                <li class=""><div class="divider"></div></li>
+                <li class=""><a href="/account/edit">Account Profile</a></li>
+                <li class=""><a href="/notes">Notes</a></li><li class=""><a href="/dancing/favorites">Favorites</a></li>
+              </ul>
+            </li>
+            <li><a href="/signout"> 退出 </a></li>
+          <% end %>
+        </ul>
+      </div>
+
+
     </div>
-
-    <div class="collapse navbar-collapse" id="main-nav-menu">
-      <ul class="nav navbar-nav">
-        <%= state_link @conn, "帖子", active: :posts, to: "/posts" %>
-        <%= state_link @conn, "资源", active: :wiki, to: "/wiki" %>
-        <%= state_link @conn, "工作机会", active: :jobs, to: "/categories/jobs" %>
-        <%= state_link @conn, "聚会", active: :meetup, to: "/categories/meetup" %>
-        <%= state_link @conn, "问答", active: :ask, to: "/categories/ask" %>
-        <%= state_link @conn, "热门", active: :nodes, to: "/nodes" %>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <%= if !@current_user do %>
-          <li><a href="/signup"> 注册 </a></li>
-          <li><a href="/signin"> 登录 </a></li>
-        <% end %>
-
-        <%= if @current_user do %>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-              <%= @current_user.name%>
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu" role="menu">
-              <li class="">
-                <a href="/dancing"></a>
-                <%= link "My home page", to: user_path(@conn, :edit, @current_user) %>
-              </li>
-              <li class=""><div class="divider"></div></li>
-              <li class=""><a href="/account/edit">Account Profile</a></li>
-              <li class=""><a href="/notes">Notes</a></li><li class=""><a href="/dancing/favorites">Favorites</a></li>
-            </ul>
-          </li>
-          <li><a href="/signout"> 退出 </a></li>
-        <% end %>
-      </ul>
-    </div>
-
-
-  </div>
-</nav>
+  </nav>
+</header>

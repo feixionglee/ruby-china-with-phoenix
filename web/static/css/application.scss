@@ -24,15 +24,16 @@ body {
 
 .header {
   .navbar {
-    background-color: #FFF;
+    background-color: #87002D;
     box-shadow: 0 1px 1px rgba(0, 0, 0,.11);
     margin-bottom: 15px;
     border: 0px;
+    border-radius: 0;
     color: $blueText;
   }
 
   .navbar-brand {
-    color: #666 !important;
+    /*color: #666 !important;*/
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: bold;
     margin-left: 0 !important;
@@ -68,7 +69,7 @@ body {
       li a:hover,
       li.active a,
       li.active a:focus,
-      li.active a:hover { border-bottom:3px solid $red; color: $red; background: transparent; padding-bottom: 12px;}
+      li.active a:hover { border-bottom:3px solid $red; color: #fff; background: transparent; padding-bottom: 12px;}
     }
 
     .navbar-nav .dropdown{

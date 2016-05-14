@@ -9,14 +9,12 @@ defmodule Elixirer.ActiveTab do
     # IEx.pry
     active_tab =
       case conn.path_info do
-        ["categories", "jobs"] ->
-          :jobs
-        ["categories", "meetup"] ->
-          :meetup
-        ["categories", "ask"] ->
-          :ask
-        ["categories", _category] ->
-          :posts
+        [] ->
+          ""
+        [active] ->
+          String.to_atom active
+        ["categories", cate_name] ->
+          String.to_atom cate_name
         _ ->
           String.to_atom List.first(conn.path_info)
       end
