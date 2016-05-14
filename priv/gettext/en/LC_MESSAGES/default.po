@@ -1,0 +1,27 @@
+#: web/templates/page/index.html.eex:2
+msgid "Welcome to %{name}"
+msgstr "Welcome to %{name}"
+
+#: web/templates/shared/header.html.eex:18
+msgid "ask"
+msgstr "ask"
+
+#: web/templates/shared/header.html.eex:19
+msgid "jobs"
+msgstr "jobs"
+
+#: web/templates/shared/header.html.eex:20
+msgid "meetup"
+msgstr "meetup"
+
+#: web/templates/shared/header.html.eex:21
+msgid "nodes"
+msgstr "nodes"
+
+#: web/templates/shared/header.html.eex:16
+msgid "topics"
+msgstr "topics"
+
+#: web/templates/shared/header.html.eex:17
+msgid "wiki"
+msgstr "wiki"

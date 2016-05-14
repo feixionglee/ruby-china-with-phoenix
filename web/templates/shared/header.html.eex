@@ -13,12 +13,12 @@
 
       <div class="collapse navbar-collapse" id="main-nav-menu">
         <ul class="nav navbar-nav">
-          <%= state_link @conn, "帖子", active: :posts, to: "/posts" %>
-          <%= state_link @conn, "资源", active: :wiki, to: "/wiki" %>
-          <%= state_link @conn, "问答", active: :ask, to: "/categories/ask" %>
-          <%= state_link @conn, "工作机会", active: :jobs, to: "/categories/jobs" %>
-          <%= state_link @conn, "线下活动", active: :meetup, to: "/categories/meetup" %>
-          <%= state_link @conn, "热门", active: :nodes, to: "/nodes" %>
+          <%= state_link @conn, gettext("topics"), active: :posts, to: "/posts" %>
+          <%= state_link @conn, gettext("wiki"), active: :wiki, to: "/wiki" %>
+          <%= state_link @conn, gettext("ask"), active: :ask, to: "/categories/ask" %>
+          <%= state_link @conn, gettext("jobs"), active: :jobs, to: "/categories/jobs" %>
+          <%= state_link @conn, gettext("meetup"), active: :meetup, to: "/categories/meetup" %>
+          <%= state_link @conn, gettext("nodes"), active: :nodes, to: "/nodes" %>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <%= if !@current_user do %>
