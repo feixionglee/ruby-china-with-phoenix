@@ -13,7 +13,7 @@ msgstr ""
 
 #: web/templates/page/index.html.eex:2
 msgid "Welcome to %{name}"
-msgstr "欢迎 %{name}"
+msgstr ""
 
 #: web/templates/shared/header.html.eex:18
 msgid "ask"
@@ -37,4 +37,16 @@ msgstr ""
 
 #: web/templates/shared/header.html.eex:17
 msgid "wiki"
+msgstr ""
+
+#: web/templates/post/edit.html.eex:5
+msgid "Edit %{Post}"
+msgstr ""
+
+#: web/templates/post/form.html.eex:21
+msgid "Post Content"
+msgstr ""
+
+#: web/templates/post/form.html.eex:27
+msgid "Submit"
 msgstr ""

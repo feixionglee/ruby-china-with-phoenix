@@ -25,3 +25,15 @@ msgstr "topics"
 #: web/templates/shared/header.html.eex:17
 msgid "wiki"
 msgstr "wiki"
+
+#: web/templates/post/edit.html.eex:5
+msgid "Edit %{Post}"
+msgstr "Edit Post"
+
+#: web/templates/post/form.html.eex:21
+msgid "Post Content"
+msgstr "Post Content"
+
+#: web/templates/post/form.html.eex:27
+msgid "Submit"
+msgstr "Submit"

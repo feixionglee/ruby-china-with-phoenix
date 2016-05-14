@@ -11,25 +11,25 @@ msgstr ""
 "Language: zh-CN\n"
 
 msgid "can't be blank"
-msgstr ""
+msgstr "不能为空"
 
 msgid "has already been taken"
-msgstr ""
+msgstr "已被使用"
 
 msgid "is invalid"
-msgstr ""
+msgstr "无效"
 
 msgid "has invalid format"
-msgstr ""
+msgstr "格式错误"
 
 msgid "has an invalid entry"
 msgstr ""
 
 msgid "is reserved"
-msgstr ""
+msgstr "是保留关键字"
 
 msgid "does not match confirmation"
-msgstr ""
+msgstr "两次输入不匹配"
 
 msgid "is still associated to this entry"
 msgstr ""
@@ -39,8 +39,8 @@ msgstr ""
 
 msgid "should be %{count} character(s)"
 msgid_plural "should be %{count} character(s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "应该为%{count}字符"
+msgstr[1] "应该为%{count}字符"
 
 msgid "should have %{count} item(s)"
 msgid_plural "should have %{count} item(s)"
@@ -49,8 +49,8 @@ msgstr[1] ""
 
 msgid "should be at least %{count} character(s)"
 msgid_plural "should be at least %{count} character(s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "至少%{count}字符"
+msgstr[1] "至少%{count}字符"
 
 msgid "should have at least %{count} item(s)"
 msgid_plural "should have at least %{count} item(s)"

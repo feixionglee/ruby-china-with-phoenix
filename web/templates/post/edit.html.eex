@@ -2,7 +2,7 @@
   <div class="col-md-9">
     <div class="panel panel-default">
       <div class="panel-heading">
-        Edit post
+        <%= gettext "Edit %{Post}" %>
       </div>
       <div class="panel-body">
         <%= render "form.html", changeset: @changeset, categories: @categories,
