@@ -6,7 +6,7 @@
   "db_connection": {:hex, :db_connection, "0.2.5"},
   "decimal": {:hex, :decimal, "1.1.2"},
   "earmark": {:git, "https://github.com/pragdave/earmark.git", "a9e60184fc4a887fadd628257ed1ef5ae7ef440f", []},
-  "ecto": {:hex, :ecto, "2.0.0-rc.4"},
+  "ecto": {:hex, :ecto, "2.0.0-rc.5"},
   "fs": {:hex, :fs, "0.9.2"},
   "gettext": {:hex, :gettext, "0.10.0"},
   "hackney": {:hex, :hackney, "1.6.0"},
@@ -25,4 +25,7 @@
   "postgrex": {:hex, :postgrex, "0.11.1"},
   "qiniu": {:git, "https://github.com/feixionglee/qiniu.git", "b22efd204047380ddefb75cab88414ccc4fd66b7", []},
   "ranch": {:hex, :ranch, "1.2.1"},
+  "scrivener": {:git, "https://github.com/drewolson/scrivener", "857646aca421e395ac67232cad037833a3047d70", [branch: "v2"]},
+  "scrivener_ecto": {:git, "https://github.com/drewolson/scrivener_ecto.git", "3483ad6d6b9004a26781efdf02b4486de6315bed", []},
+  "scrivener_html": {:git, "https://github.com/feixionglee/scrivener_html.git", "5bd539d27cf482a65d5850b72684daf6ddec948c", []},
   "ssl_verify_fun": {:hex, :ssl_verify_fun, "1.1.0"}}

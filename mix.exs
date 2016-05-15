@@ -40,7 +40,9 @@ defmodule Elixirer.Mixfile do
      {:cowboy, "~> 1.0"},
      {:comeonin, "~> 2.0"},
      {:qiniu,"~> 0.2.3", git: "https://github.com/feixionglee/qiniu.git"},
-     {:earmark, "~> 0.2.2", git: "https://github.com/pragdave/earmark.git"}]
+     {:earmark, "~> 0.2.2", git: "https://github.com/pragdave/earmark.git"},
+     {:scrivener_ecto, "1.0.0-dev", git: "https://github.com/drewolson/scrivener_ecto.git"},
+     {:scrivener_html, "1.0.10", git: "https://github.com/feixionglee/scrivener_html.git"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.

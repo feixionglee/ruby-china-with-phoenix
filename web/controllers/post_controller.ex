@@ -16,11 +16,20 @@ defmodule Elixirer.PostController do
     render(conn, "index.html", posts: posts)
   end
 
-  def index(conn, _params, user) do
-    posts = Repo.all from p in Post,
-                        preload: [:user]
+  def index(conn, params, user) do
+    # posts = Repo.all from p in Post,
+    #                     preload: [:user]
 
-    render(conn, "index.html", posts: posts)
+    page = from(p in Post, preload: [:user])
+      |> Repo.paginate(params)
+
+    render conn, "index.html",
+      posts: page.entries,
+      page: page,
+      page_number: page.page_number,
+      page_size: page.page_size,
+      total_pages: page.total_pages,
+      total_entries: page.total_entries
   end
 
   def new(conn, _params, user) do

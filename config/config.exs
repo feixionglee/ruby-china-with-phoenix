@@ -29,3 +29,6 @@ config :phoenix, :generators,
   binary_id: false
 
 config :elixirer, ecto_repos: [Elixirer.Repo]
+
+config :scrivener_html,
+  routes_helper: Elixirer.Router.Helpers

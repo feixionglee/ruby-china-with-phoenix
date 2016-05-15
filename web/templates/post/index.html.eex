@@ -44,7 +44,7 @@
       </div>
 
       <div class="panel-footer clearfix">
-        <ul class="pagination"><li class="prev previous_page disabled"><a href="#">← Previous</a></li> <li class="active"><a rel="start" href="/topics?page=1">1</a></li> <li><a rel="next" href="/topics?page=2">2</a></li> <li><a href="/topics?page=3">3</a></li> <li><a href="/topics?page=4">4</a></li> <li><a href="/topics?page=5">5</a></li> <li class="disabled"><a href="#">…</a></li> <li><a href="/topics?page=68">68</a></li> <li><a href="/topics?page=69">69</a></li> <li class="next next_page "><a rel="next" href="/topics?page=2">Next →</a></li></ul>
+        <%= pagination_links @conn, @page %>
       </div>
 
     </div>
