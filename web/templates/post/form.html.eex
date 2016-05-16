@@ -8,7 +8,8 @@
   <div class="form-group">
     <div class="input-group">
       <span class="node-select input-group-btn">
-        <%= select f, :category, @categories, prompt: "选择节点", class: "selectpicker", "data-live-search": "true", "data-width": "140px"%>
+        <%= select f, :category, Enum.map(@categories, fn (x) -> {Gettext.gettext(Elixirer.Gettext, x),  x} end),
+              prompt: "选择节点", class: "selectpicker", "data-live-search": "true", "data-width": "140px"%>
 
       </span>
       <%= text_input f, :title, class: "form-control", placeholder: "标题" %>

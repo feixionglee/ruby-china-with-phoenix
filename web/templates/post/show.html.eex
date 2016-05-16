@@ -43,6 +43,40 @@
         </div>
       </div>
     </div>
+
+    <div id="reply" class="panel panel-default">
+      <div class="panel-heading">回帖</div>
+      <div class="panel-body">
+
+        <div class="editor-toolbar">
+  <div class="opts pull-right">
+    <span class="dropdown dropdown-small" id="editor-toolbar-insert-code">
+      <a href="#editor-toolbar-insert-code" data-toggle="dropdown" title="Insert Codes"><i class="fa fa-code"></i></a>
+      <ul class="dropdown-menu insert-codes" role="menu">
+        <li><a data-lang="ruby" href="#">Ruby</a></li><li><a data-lang="erb" href="#">HTML / ERB</a></li><li><a data-lang="scss" href="#">CSS / SCSS</a></li><li><a data-lang="js" href="#">JavaScript</a></li><li><a data-lang="yml" href="#">YAML <i>(.yml)</i></a></li><li><a data-lang="coffee" href="#">CoffeeScript</a></li><li><a data-lang="conf" href="#">Nginx / Redis <i>(.conf)</i></a></li><li><a data-lang="python" href="#">Python</a></li><li><a data-lang="php" href="#">PHP</a></li><li><a data-lang="java" href="#">Java</a></li><li><a data-lang="erlang" href="#">Erlang</a></li><li><a data-lang="shell" href="#">Shell / Bash</a></li>
+      </ul>
+    </span>
+    <a id="topic-upload-image" rel="twipsy" title="" href="#" data-original-title="Upload image"><i class="fa fa-fa fa-image"></i> </a>
+  </div>
+  <ul class="nav nav-pills" style="clear:none;">
+    <li class="edit active"><a href="#">Edit</a></li>
+    <li class="preview"><a href="#">Preview</a></li>
+  </ul>
+</div>
+
+        <form class="new_reply" id="new_reply" action="/topics/29901/replies" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓">
+
+          <div class="form-group">
+            <div class="topic-editor-dropzone dz-clickable"><textarea class="topic-editor form-control" rows="4" tabindex="1" name="reply[body]" id="reply_body" style="height: 80px;"></textarea></div><div id="preview" class="markdown form-control" style="display: none;"></div>
+          </div>
+          <div class="submit-buttons">
+            <button type="submit" id="reply-button" class="btn btn-primary" tabindex="2" ,="" data-disable-with="Reply">Reply</button>
+            <span class="help-inline" style="padding-left: 5px;" title="或者 Ctrl + Enter"><kbd>Command</kbd> + <kbd>Enter</kbd></span>
+
+            <div class="pull-right"><a href="/markdown" target="_blank">排版说明</a></div>
+          </div>
+</form>      </div>
+    </div>
   </div>
   <div class="col-md-3 sidebar">
     <%= render "_sidebar.html" %>
