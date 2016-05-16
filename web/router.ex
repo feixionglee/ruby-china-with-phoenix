@@ -34,6 +34,8 @@ defmodule Elixirer.Router do
     resources "/posts", PostController
     get "/categories/:category", PostController, :index, as: :category
 
+    resources "/comments", CommentController
+
     resources "/nodes", NodeController, only: [:index, :show]
   end
 

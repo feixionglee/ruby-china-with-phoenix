@@ -9,6 +9,7 @@ defmodule Elixirer.Post do
     field :category, :string
     field :is_great, :boolean
     belongs_to :user, Elixirer.User
+    has_many :comments, Elixirer.Comment
 
     timestamps
   end

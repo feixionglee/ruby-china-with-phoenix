@@ -55,7 +55,7 @@ defmodule Elixirer.PostController do
 
 
   def show(conn, %{"id" => id}, user) do
-    post = Repo.get!(Post, id) |> Repo.preload(:user)
+    post = Repo.get!(Post, id) |> Repo.preload([:user, :comments])
 
     render(conn, "show.html", post: post)
   end
