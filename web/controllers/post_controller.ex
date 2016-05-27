@@ -11,7 +11,7 @@ defmodule Elixirer.PostController do
 
   def index(conn, params, user) do
     query = if params["category"] do
-      from(p in Post, where: p.category == ^params["category"], preload: [:user, :comments])
+      from(p in Post, where: p.category == ^params["category"], preload: [:user, comments: [:user]])
     else
       from(p in Post, preload: [:user, comments: [:user]])
     end

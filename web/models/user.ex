@@ -51,4 +51,10 @@ defmodule Elixirer.User do
         changeset
     end
   end
+
+  defimpl Phoenix.Param, for: Elixirer.User do
+    def to_param(%{name: name}) do
+      "#{name}"
+    end
+  end
 end

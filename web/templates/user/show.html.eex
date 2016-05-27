@@ -4,9 +4,7 @@
   <div class="panel-body userinfo">
     <div class="media">
       <div class="media-left">
-        <a href="<%= user_path(@conn, :show, @user.id) %>" class="user_avatar">
-          <%= @user.email %>
-        </a>
+        <%= link @user.email, to: user_path(@conn, :edit, @user), class: "user_avatar" %>
       </div>
       <div class="media-body reply_content">
         <h2 class="media-heading"><%= @user.name %></h2>
@@ -21,9 +19,7 @@
 <%= if @user == @current_user do %>
   <div class="panel panel-default">
     <div class="panel-body">
-      <a href="<%= user_path(@conn, :edit, @current_user.id) %>" class="btn btn-primary">
-        修改密码
-      </a>
+      <%= link "修改密码", to: user_path(@conn, :edit, @current_user), class: "btn btn-primary" %>
     </div>
   </div>
 <% end %>

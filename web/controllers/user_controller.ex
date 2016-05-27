@@ -5,8 +5,8 @@ defmodule Elixirer.UserController do
   # plug :authenticate when action in [:index, :show]
   plug :authenticate_user when action in [:edit, :update]
 
-  def show(conn, %{"id" => id}) do
-    user = Repo.get(Elixirer.User, id)
+  def show(conn, %{"name" => name}) do
+    user = Repo.get_by!(User, name: name)
     render conn, "show.html", user: user
   end
 
@@ -28,14 +28,14 @@ defmodule Elixirer.UserController do
     end
   end
 
-  def edit(conn, %{"id" => id}) do
-    user = Repo.get!(User, id)
+  def edit(conn, %{"name" => name}) do
+    user = Repo.get_by!(User, name: name)
     changeset = User.changeset(user)
     render(conn, "edit.html", user: user, changeset: changeset)
   end
 
-  def update(conn, %{"id" => id, "user" => user_params}) do
-    user = Repo.get!(User, id)
+  def update(conn, %{"name" => name, "user" => user_params}) do
+    user = Repo.get_by!(User, name: name)
     changeset = User.changeset(user, user_params)
 
     case Repo.update(changeset) do

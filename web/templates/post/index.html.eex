@@ -9,7 +9,6 @@
           <a href="/topics/no_reply">无人问津</a> /
           <a href="/topics/last">最新创建</a>
         </div>
-
       </div>
 
       <div class="panel-body">
@@ -29,9 +28,9 @@
                 <i title="精华帖" class="fa fa-diamond"></i>
               </div>
               <div class="info">
-                <a class="node" href="/topics/node52"><%= post.category %></a>
+                <a class="node" href="/categories/<%= post.category %>"><%= post.category %></a>
                 •
-                <a data-name="mizuhashi" href="/mizuhashi"><%= post.user.name %></a>
+                <a data-name="mizuhashi" href="/users/<%= post.user.name %>"><%= post.user.name %></a>
                 <span class="hidden-mobile">
                   •
                   <%= if length(post.comments) > 0 do %>

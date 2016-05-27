@@ -6,14 +6,14 @@
     <%= for comment <- @comments do %>
       <div class="reply" data-id="294487" id="reply1">
         <div class="avatar">
-          <a href="/huacnlee">
+          <a href="/users/<%= comment.user.name %>">
             <img class="media-object avatar-48" src=<%= avatar_url(comment.user) %> />
           </a>
         </div>
         <div class="infos">
           <div class="info">
             <span class="name">
-              <a data-name="李华顺" href="/huacnlee"><%= comment.user.name %></a>
+              <a data-name="<%= comment.user.name %>" href="/users/<%= comment.user.name %>"><%= comment.user.name %></a>
             </span> ·
             <span class="time">
               <a class="reply-floor" href="#reply1">#1</a> · <abbr class="timeago" title="2016-04-20T17:03:00+08:00"> 25 days ago</abbr>

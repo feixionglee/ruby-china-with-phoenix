@@ -28,7 +28,8 @@ defmodule Elixirer.Router do
     get "/signin", SessionController, :new
     get "/signout", SessionController, :delete
 
-    resources "/users", UserController
+    resources "/users", UserController, param: "name"
+
     get "/signup", UserController, :new
 
     resources "/posts", PostController do

@@ -17,7 +17,8 @@ defmodule Elixirer.Post do
   @category [
     "ask",
     "jobs",
-    "meetup"
+    "meetup",
+    "newbie"
   ]
   def category, do: @category
 
