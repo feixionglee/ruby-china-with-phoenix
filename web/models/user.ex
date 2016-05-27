@@ -11,6 +11,7 @@ defmodule Elixirer.User do
     field :password_hash, :string
     field :avatar, :string
     has_many :posts, Elixirer.Post
+    has_many :comments, Elixirer.Comment
 
     timestamps
   end
@@ -40,10 +41,6 @@ defmodule Elixirer.User do
     |> cast(params, ~w(password), [])
     |> validate_length(:password, min: 6, max: 100)
     |> put_pass_hash()
-  end
-
-  def avatar_url(model) do
-    Elixirer.Photo.remote_url(model.avatar)
   end
 
   defp put_pass_hash(changeset) do

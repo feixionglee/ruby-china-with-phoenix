@@ -31,10 +31,12 @@ defmodule Elixirer.Router do
     resources "/users", UserController
     get "/signup", UserController, :new
 
-    resources "/posts", PostController
+    resources "/posts", PostController do
+      resources "/comments", CommentController
+    end
     get "/categories/:category", PostController, :index, as: :category
 
-    resources "/comments", CommentController
+
 
     resources "/nodes", NodeController, only: [:index, :show]
   end

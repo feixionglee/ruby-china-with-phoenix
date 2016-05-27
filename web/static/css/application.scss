@@ -992,4 +992,5 @@ textarea.div-dropzone-focus { border-color: #BBE1C9; background: #fafafa; }
   position: relative;
 }
 .form-control.editable {min-height: 400px; height: auto;}
+.form-control.editable.comment-content {min-height: 100px;}
 .form-control.editable.medium-editor-hidden{display: none;}

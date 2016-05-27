@@ -1,8 +1,8 @@
-
 defmodule Elixirer.PostController do
   use Elixirer.Web, :controller
 
   alias Elixirer.Post
+  alias Elixirer.Comment
 
   plug :authenticate_user  when action in [:new, :create, :edit, :update]
   plug :load_categories when action in [:new, :create, :edit, :update]
@@ -55,9 +55,16 @@ defmodule Elixirer.PostController do
 
 
   def show(conn, %{"id" => id}, user) do
-    post = Repo.get!(Post, id) |> Repo.preload([:user, :comments])
+    post =
+      Repo.get!(Post, id)
+      |> Repo.preload([:user, comments: [:user]])
 
-    render(conn, "show.html", post: post)
+    changeset =
+      post
+      |> build_assoc(:comments)
+      |> Comment.changeset()
+
+    render(conn, "show.html", post: post, changeset: changeset, comments: post.comments)
   end
 
   def edit(conn, %{"id" => id}, user) do

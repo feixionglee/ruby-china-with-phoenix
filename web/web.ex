@@ -52,6 +52,7 @@ defmodule Elixirer.Web do
 
       import Elixirer.Router.Helpers
       import Elixirer.ErrorHelpers
+      import Elixirer.ViewHelpers
       import Elixirer.Gettext
     end
   end

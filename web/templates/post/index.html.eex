@@ -17,7 +17,7 @@
           <div class="topic media topic-29777">
             <div class="avatar media-left">
               <%= link to: user_path(@conn, :show, post.user) do %>
-                <img class="media-object avatar-48" src=<%=Elixirer.User.avatar_url(post.user)%> alt="23529">
+                <img class="media-object avatar-48" src=<%= avatar_url(post.user)%> alt="23529">
               <% end %>
             </div>
             <div class="infos media-body">

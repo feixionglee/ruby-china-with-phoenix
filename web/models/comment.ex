@@ -10,12 +10,16 @@ defmodule Elixirer.Comment do
     timestamps
   end
 
+  @required_fields ~w( content )
+  @optional_fields ~w( post_id )
+
   @doc """
   Builds a changeset based on the `struct` and `params`.
   """
-  def changeset(struct, params \\ %{}) do
-    struct
-    |> cast(params, [:content, :state])
-    |> validate_required([:content, :state])
+  def changeset(model, params \\ %{}) do
+    model
+    |> cast(params, @required_fields, @optional_fields)
+    |> put_change(:state, "normal")
+    |> assoc_constraint(:post)
   end
 end

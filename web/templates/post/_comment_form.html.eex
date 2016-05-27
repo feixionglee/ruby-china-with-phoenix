@@ -1,0 +1,20 @@
+ <div id="reply" class="panel panel-default">
+  <div class="panel-heading">回帖</div>
+  <div class="panel-body">
+    <%= form_for @changeset, @action, fn f -> %>
+      <%= if @changeset.action do %>
+        <div class="alert alert-danger">
+          <p>Oops, something went wrong! Please check the errors below.</p>
+        </div>
+      <% end %>
+      <div class="form-group">
+        <%= text_input f, :content, class: "form-control editable comment-content" %>
+      </div>
+      <div class="submit-buttons">
+        <button type="submit" id="reply-button" class="btn btn-primary" tabindex="2" ,="" data-disable-with="Reply">Reply</button>
+        <span class="help-inline" style="padding-left: 5px;" title="或者 Ctrl + Enter"><kbd>Command</kbd> + <kbd>Enter</kbd></span>
+        <div class="pull-right"><a href="/markdown" target="_blank">排版说明</a></div>
+      </div>
+    <% end %>
+  </div>
+</div>
