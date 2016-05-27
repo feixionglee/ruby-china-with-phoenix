@@ -1,13 +1,13 @@
 <div id="replies" class="panel panel-default" data-last-floor="5">
   <div class="total panel-heading">
-    共收到 <b>5</b> 条回复
+    共收到 <b><%= length @comments %></b> 条回复
   </div>
   <div class="items panel-body">
     <%= for comment <- @comments do %>
       <div class="reply" data-id="294487" id="reply1">
         <div class="avatar">
           <a href="/huacnlee">
-            <img class="media-object avatar-48" src=<%= avatar_url(comment.user)%> />
+            <img class="media-object avatar-48" src=<%= avatar_url(comment.user) %> />
           </a>
         </div>
         <div class="infos">
@@ -25,7 +25,7 @@
             </span>
           </div>
           <div class="markdown">
-            <%= comment.content %>
+            <%= raw comment.content %>
           </div>
         </div>
       </div>
