@@ -994,3 +994,12 @@ textarea.div-dropzone-focus { border-color: #BBE1C9; background: #fafafa; }
 .form-control.editable {min-height: 400px; height: auto;}
 .form-control.editable.comment-content {min-height: 100px;}
 .form-control.editable.medium-editor-hidden{display: none;}
+
+.add-location {
+  font-size: 1.2em;
+  margin-left: 20px;
+}
+
+.locationModal .modal-body {height: 600px;}
+
+.medium-editor-insert-plugin .medium-insert-buttons {left: -50px !important;}
