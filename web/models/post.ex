@@ -7,9 +7,11 @@ defmodule Elixirer.Post do
     field :slug, :string
     field :content, :string
     field :category, :string
+    field :cityname, :string
     field :is_great, :boolean
     belongs_to :user, Elixirer.User
     has_many :comments, Elixirer.Comment
+    embeds_one :location, Elixirer.Location, on_replace: :delete
 
     timestamps
   end
@@ -24,7 +26,7 @@ defmodule Elixirer.Post do
 
 
   @required_fields ~w(title content category)
-  @optional_fields ~w()
+  @optional_fields ~w(cityname)
 
   @doc """
   Creates a changeset based on the `model` and `params`.
@@ -36,9 +38,33 @@ defmodule Elixirer.Post do
     model
     |> cast(params, @required_fields, @optional_fields)
     |> strip_title()
-    |> validate_length(:title, min: 10, max: 60)
-    |> validate_length(:content, min: 10)
+    |> validate_length(:title, min: 3, max: 60)
+    |> validate_length(:content, min: 3)
     |> slugify_title()
+    |> embed_location(params)
+  end
+
+  def embed_location(changeset, params) do
+
+    unless Map.has_key?(params, "location") do
+      changeset
+    else
+      json = Poison.decode!(params["location"])
+      location = %Elixirer.Location{
+        module: json["module"],
+        cityname: json["cityname"],
+        lat: to_string(json["lat"]),
+        lng: to_string(json["lng"]),
+        poiaddress: json["poiaddress"],
+        poiname: json["poiname"]
+      }
+      case location.module do
+        "locationPicker"
+          -> put_embed(changeset, :location, location)
+        _
+          -> changeset
+      end
+    end
   end
 
   defp strip_title(changeset) do

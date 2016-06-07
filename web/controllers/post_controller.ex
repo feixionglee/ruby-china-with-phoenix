@@ -69,12 +69,15 @@ defmodule Elixirer.PostController do
 
   def edit(conn, %{"id" => id}, user) do
     post = Repo.get!(user_posts(user), id)
+
     changeset = Post.changeset(post)
+
     render(conn, "edit.html", post: post, changeset: changeset)
   end
 
   def update(conn, %{"id" => id, "post" => post_params}, user) do
     post = Repo.get!(user_posts(user), id)
+
     changeset = Post.changeset(post, post_params)
 
     case Repo.update(changeset) do

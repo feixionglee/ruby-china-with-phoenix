@@ -1,4 +1,4 @@
-<%= form_for @changeset, @action, fn f -> %>
+<%= form_for @changeset, @action, [id: "post-form"], fn f -> %>
   <%= if @changeset.action do %>
     <div class="alert alert-danger">
       <p>Oops, something went wrong! Please check the errors below.</p>
@@ -23,6 +23,10 @@
     <%= textarea f, :content, class: "form-control editable" %>
     <%= error_tag f, :content %>
   </div>
+
+  <%= hidden_input f, :cityname %>
+  <%=# hidden_input f, :location %>
+  <%= hidden_input f, :location, value: Poison.encode!(@changeset.data.location) %>
 
   <div class="form-group">
     <%= submit gettext("Submit"), class: "btn btn-primary" %>

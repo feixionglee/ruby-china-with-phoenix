@@ -6,7 +6,6 @@ defmodule Elixirer.ActiveTab do
   end
 
   def call(conn, opts) do
-    # IEx.pry
     active_tab =
       case conn.path_info do
         [] ->
