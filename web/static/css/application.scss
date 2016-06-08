@@ -109,8 +109,8 @@ body {
     margin-right: 10px;
 
     .fa {
-      color: #333;
-      &:hover { color: #666; }
+      color: white;
+      &:hover { color: #aaa; }
     }
 
     .fa-search{
@@ -135,17 +135,17 @@ body {
     }
     .form-control {
       font-size: 12px;
-      border:none;
+      border: 1px solid #aaa;
       width: 0px;
       height: 100%;
-      padding:6px 1px 4px 1px;
+      padding: 4px;
       margin-left: 4px;
       background: transparent;
       transition: all .3s;
       box-sizing: border-box;
-      color: #333;
+      color: white;
       &::-webkit-input-placeholder {
-        color: #ddd;
+        color: #aaa;
       }
     }
     &.active {

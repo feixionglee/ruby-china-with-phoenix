@@ -102,6 +102,10 @@ defmodule Elixirer.PostController do
     |> redirect(to: post_path(conn, :index))
   end
 
+  def search do
+
+  end
+
   def action(conn, _) do
     apply(__MODULE__, action_name(conn),
         [conn, conn.params, conn.assigns.current_user])
