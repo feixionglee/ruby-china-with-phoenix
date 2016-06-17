@@ -8,17 +8,14 @@ defmodule Elixirer.SearchController do
 
   alias Elixirer.Post
 
+  plug :sanitize_q
+
   def index(conn, params) do
     qstr = params["q"]
     page_number = case params["page"] do
       nil -> 1
       ~r/\D/ -> 1
       _ -> String.to_integer(params["page"])
-    end
-
-    if is_nil(qstr) || String.length(qstr) == 0 do
-      conn |> redirect to: home_path(conn, :index)
-      # redirect conn, to: "/"
     end
 
     size = 2
@@ -37,9 +34,8 @@ defmodule Elixirer.SearchController do
 
     case Tirexs.Query.create_resource(query) do
       {:ok, 200, result} ->
-        # IEx.pry
         page = ScrivenerElasticsearch.paginate result, params
-
+        # IEx.pry
         render conn, "index.html",
           posts: page.entries,
           page: page,
@@ -52,4 +48,13 @@ defmodule Elixirer.SearchController do
     end
   end
 
+  defp sanitize_q(conn, _opts) do
+    if is_nil(conn.params["q"]) || conn.params["q"] == "" do
+      conn
+      |> redirect(to: home_path(conn, :index))
+      |> halt()
+    else
+      conn
+    end
+  end
 end
