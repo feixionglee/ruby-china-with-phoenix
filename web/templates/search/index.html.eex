@@ -1,22 +1,26 @@
 <div class="search-results panel panel-default">
   <div class="panel-heading clearfix">
-    关于 “上海” 的搜索结果, 共 649 条
+    关于 “<%= @q %>” 的搜索结果, 共 <%= @total_entries %> 条
   </div>
 
   <div class="panel-body">
-    <div class="result">
-      <div class="title"><a href="/topics/4058">请教<em>上</em><em>海</em>办宽带</a></div>
-      <div class="info">
-        <span class="url"><a href="/topics/4058">https://ruby-china.org/topics/4058</a></span>
-        <span class="date" title="Last Updated At">2012-12-17</span>
+    <%= for post <- @posts do %>
+      <div class="result">
+        <div class="title">
+          <a href="/posts/<%= post._id %>"><%= post._source[:title] %></a>
+        </div>
+        <div class="info">
+          <span class="url"><%= link post_url(@conn, :show, post._id), to: post_path(@conn, :show, post._id)%></span>
+          <span class="date" title="Last Updated At">2012-12-17</span>
+        </div>
+        <div class="desc">
+          <%= raw post._source[:content] %>
+        </div>
       </div>
-      <div class="desc">
-        刚搬到<em>上</em><em>海</em>，请教下大家，宽带办那种好?  有线通不好,不知道是普遍的问题,还是我的问题 我也吐槽一句，有线通的电话让我很无语。 还用说，当然是电信 电信这边2m的要
-      </div>
-    </div>
+    <% end %>
 
 
-    <div class="result">
+    <%# <div class="result">
       <div class="title"><a href="/topics/25230">[大连或<em>上</em><em>海</em>] Japanese Speaking Ruby Project Manager</a></div>
       <div class="info">
         <span class="url"><a href="/topics/25230">https://ruby-china.org/topics/25230</a></span>
@@ -38,9 +42,9 @@
         **易空<em>海</em>**是优秀的网络和移动开发设计公司， 办公室位于<em>上</em><em>海</em>和新加坡。
         我们使用最新和最棒的网络技术。我们相信 **Happy employees mean happy clients</div>
       </div>
-    </div>
+    </div> %>
 
   <div class="panel-footer clearfix">
-    <%= pagination_links @conn, @page, path: &search_path/3 %>
+    <%= pagination_links @conn, @page, q: @q, path: &search_path/3 %>
   </div>
 </div>

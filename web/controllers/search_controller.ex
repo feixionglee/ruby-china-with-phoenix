@@ -4,6 +4,8 @@ require Tirexs.Search
 defmodule Elixirer.SearchController do
   use Elixirer.Web, :controller
 
+  use ScrivenerElasticsearch, page_size: 2
+
   import Tirexs.Search
 
   alias Elixirer.Post
@@ -34,9 +36,10 @@ defmodule Elixirer.SearchController do
 
     case Tirexs.Query.create_resource(query) do
       {:ok, 200, result} ->
-        page = ScrivenerElasticsearch.paginate result, params
+        page = paginate result, params
         # IEx.pry
         render conn, "index.html",
+          q: params["q"],
           posts: page.entries,
           page: page,
           page_number: page.page_number,
