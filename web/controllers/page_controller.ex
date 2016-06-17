@@ -1,5 +1,3 @@
-require IEx
-
 defmodule Elixirer.PageController do
   use Elixirer.Web, :controller
 

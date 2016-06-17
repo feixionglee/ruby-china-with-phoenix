@@ -1,0 +1,46 @@
+<div class="search-results panel panel-default">
+  <div class="panel-heading clearfix">
+    关于 “上海” 的搜索结果, 共 649 条
+  </div>
+
+  <div class="panel-body">
+    <div class="result">
+      <div class="title"><a href="/topics/4058">请教<em>上</em><em>海</em>办宽带</a></div>
+      <div class="info">
+        <span class="url"><a href="/topics/4058">https://ruby-china.org/topics/4058</a></span>
+        <span class="date" title="Last Updated At">2012-12-17</span>
+      </div>
+      <div class="desc">
+        刚搬到<em>上</em><em>海</em>，请教下大家，宽带办那种好?  有线通不好,不知道是普遍的问题,还是我的问题 我也吐槽一句，有线通的电话让我很无语。 还用说，当然是电信 电信这边2m的要
+      </div>
+    </div>
+
+
+    <div class="result">
+      <div class="title"><a href="/topics/25230">[大连或<em>上</em><em>海</em>] Japanese Speaking Ruby Project Manager</a></div>
+      <div class="info">
+        <span class="url"><a href="/topics/25230">https://ruby-china.org/topics/25230</a></span>
+        <span class="date" title="Last Updated At">2015-04-23</span>
+      </div>
+      <div class="desc">
+        【大连或<em>上</em><em>海</em>】Accenture 招聘Ruby项目经理和Ruby 项目组长/助理经理（15-30K），日语流利，需要去日本出差至少半年
+        Position: Ruby Project Mgr
+      </div>
+    </div>
+
+    <div class="result">
+      <div class="title"><a href="/topics/4548">[<em>上</em><em>海</em>][新加坡] 易空<em>海</em>招聘 Rails Web Developers! </a></div>
+      <div class="info">
+        <span class="url"><a href="/topics/4548">https://ruby-china.org/topics/4548</a></span>
+        <span class="date" title="Last Updated At">2012-12-17</span>
+      </div>
+      <div class="desc">
+        **易空<em>海</em>**是优秀的网络和移动开发设计公司， 办公室位于<em>上</em><em>海</em>和新加坡。
+        我们使用最新和最棒的网络技术。我们相信 **Happy employees mean happy clients</div>
+      </div>
+    </div>
+
+  <div class="panel-footer clearfix">
+    <%= pagination_links @conn, @page, path: &search_path/3 %>
+  </div>
+</div>

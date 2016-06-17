@@ -1,8 +1,12 @@
+require Tirexs.HTTP
+
 defmodule Elixirer.PostController do
   use Elixirer.Web, :controller
 
   alias Elixirer.Post
   alias Elixirer.Comment
+
+  import Tirexs.HTTP
 
   plug :authenticate_user  when action in [:new, :create, :edit, :update]
   plug :load_categories when action in [:new, :create, :edit, :update]
@@ -45,6 +49,7 @@ defmodule Elixirer.PostController do
 
     case Repo.insert(changeset) do
       {:ok, post} ->
+        put("/elixirer/posts/#{post.id}", [title: post.title, content: post.content])
         conn
         |> put_flash(:info, "Post created successfully.")
         |> redirect(to: post_path(conn, :show, post))
@@ -82,6 +87,7 @@ defmodule Elixirer.PostController do
 
     case Repo.update(changeset) do
       {:ok, post} ->
+        put("/elixirer/posts/#{post.id}", [title: post.title, content: post.content])
         conn
         |> put_flash(:info, "Post updated successfully.")
         |> redirect(to: post_path(conn, :show, post))
@@ -90,20 +96,18 @@ defmodule Elixirer.PostController do
     end
   end
 
-  def delete(conn, %{"id" => id}) do
+  def delete(conn, %{"id" => id}, user) do
     post = Repo.get!(Post, id)
 
     # Here we use delete! (with a bang) because we expect
     # it to always work (and if it does not, it will raise).
     Repo.delete!(post)
 
+    delete("/elixirer/posts/#{post.id}")
+
     conn
     |> put_flash(:info, "Post deleted successfully.")
     |> redirect(to: post_path(conn, :index))
-  end
-
-  def search do
-
   end
 
   def action(conn, _) do

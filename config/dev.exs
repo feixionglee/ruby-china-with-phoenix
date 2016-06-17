@@ -46,3 +46,5 @@ config :qiniu, Qiniu,
   access_key: "-H3ZcpN0XxKjaNKKdyI-l1LW0i69tdJXbKA0Zmo-",
   secret_key: "I8MMFZrYAnJNmIxLAI3obLgHzO9fyOydNnR7F0Ep",
   cdn_host: "http://o6tiaeexk.bkt.clouddn.com"
+
+config :tirexs, :uri, "http://127.0.0.1:9200"
