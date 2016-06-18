@@ -25,8 +25,7 @@ defmodule Elixirer.CommentController do
     changeset =
       user
         |> build_assoc(:comments)
-        |> Comment.changeset(comment_params)
-        |> Ecto.Changeset.put_assoc(:post, post)
+        |> Comment.create_changeset(comment_params, post)
 
     case Repo.insert(changeset) do
       {:ok, _comment} ->
