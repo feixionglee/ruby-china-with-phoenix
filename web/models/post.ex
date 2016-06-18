@@ -9,6 +9,7 @@ defmodule Elixirer.Post do
     field :category, :string
     field :cityname, :string
     field :is_great, :boolean
+    field :comments_count, :integer, default: 0
     belongs_to :user, Elixirer.User
     has_many :comments, Elixirer.Comment
     embeds_one :location, Elixirer.Location, on_replace: :delete
