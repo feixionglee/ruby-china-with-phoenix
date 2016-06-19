@@ -1,5 +1,5 @@
 <header class="header">
-  <nav class="navbar navbar-inverse">
+  <nav class="navbar navbar-inverse navbar-fixed-top navbar-default">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-menu">
@@ -11,7 +11,7 @@
         <a class="navbar-brand" href="/">Erlang & Elixir</a>
       </div>
 
-      <div class="collapse navbar-collapse" id="main-nav-menu">
+      <div id="main-nav-menu">
         <ul class="nav navbar-nav">
           <%= state_link @conn, gettext("topics"), active: :posts, to: "/posts" %>
           <%= state_link @conn, gettext("wiki"), active: :wiki, to: "/wiki" %>
@@ -20,6 +20,7 @@
           <%= state_link @conn, gettext("meetup"), active: :meetup, to: "/categories/meetup" %>
           <%= state_link @conn, gettext("nodes"), active: :nodes, to: "/nodes" %>
         </ul>
+      </div>
         <ul class="nav navbar-nav navbar-right">
           <%= if !@current_user do %>
             <li><a href="/signup"> 注册 </a></li>
@@ -58,7 +59,7 @@
             <a href="/notifications" class="" title="通知"><i class="fa fa-bell"></i><span class="count">0</span></a>
           </li>
         </ul>
-      </div>
+
 
 
     </div>

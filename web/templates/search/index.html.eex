@@ -43,8 +43,5 @@
         我们使用最新和最棒的网络技术。我们相信 **Happy employees mean happy clients</div>
       </div>
     </div> %>
-
-  <div class="panel-footer clearfix">
-    <%= pagination_links @conn, @page, q: @q, path: &search_path/3 %>
-  </div>
+  <%= pagination_links @conn, @page, q: @q, path: &search_path/3 %>
 </div>

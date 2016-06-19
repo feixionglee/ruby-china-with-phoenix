@@ -51,8 +51,52 @@
     <% end %>
 
   </div>
-  <div class="col-md-3 sidebar">
-    <%= render "_sidebar.html" %>
+  <div class="sidebar hidden-mobile col-md-3">
+    <div id="topic-sidebar" data-spy="affix" data-offset-bottom="65">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <a href="#" class="btn btn-block btn-sm btn-move-page" data-type="top"><i class="fa fa-arrow-up"></i></a>
+      <div class="buttons">
+        <div class="group likes opts">
+          <a title="赞" data-count="5" data-state="" data-type="Topic" data-id="30271" class="likeable " href="#"><i class="fa fa-heart-o"></i> <span>5 个赞</span></a>
+        </div>
+        <div class="group">
+          <div class="btn-group" role="group">
+            <a data-id="30271" class="follow btn btn-default" href="#"><i class="fa fa-eye"></i> 关注</a>
+            <a title="收藏" class="bookmark  btn btn-default" data-id="30271" href="#"><i class="fa fa-bookmark"></i> 收藏</a>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="group">
+        <div class="social-share-button" data-title="Mongoid inverse_of not work as well as active_records via: @ruby_china " data-img="" data-url="" data-desc="" data-popup="" data-via="">
+<a rel="nofollow " data-site="twitter" class="social-share-button-twitter" onclick="return SocialShareButton.share(this);" title="Share to Twitter" href="#"></a>
+<a rel="nofollow " data-site="facebook" class="social-share-button-facebook" onclick="return SocialShareButton.share(this);" title="Share to Facebook" href="#"></a>
+<a rel="nofollow " data-site="google_plus" class="social-share-button-google_plus" onclick="return SocialShareButton.share(this);" title="Share to Google+" href="#"></a>
+<a rel="nofollow " data-site="weibo" class="social-share-button-weibo" onclick="return SocialShareButton.share(this);" title="Share to Sina Weibo" href="#"></a>
+<a rel="nofollow " data-site="douban" class="social-share-button-douban" onclick="return SocialShareButton.share(this);" title="Share to Douban" href="#"></a>
+</div>
+      </div>
+      <hr>
+      <div class="reply-buttons">
+        <div class="total">
+          共收到 <b>8</b> 条回复
+        </div>
+        <a href="#reply" class="btn btn-success btn-block btn-focus-reply">参与回复</a>
+      </div>
+      <hr>
+      <div class="group opts">
+
+      </div>
+      <a href="#" class="btn btn-block btn-move-page" data-type="bottom"><i class="fa fa-arrow-down"></i></a>
+    </div>
+  </div>
+
+  <div class="notify-updated">
+    <a class="update" href="#"><i class="fa fa-bell-o"></i> <b>有新回复！</b>点击这里立即载入</a>
+  </div>
+</div>
+
   </div>
 </div>
 

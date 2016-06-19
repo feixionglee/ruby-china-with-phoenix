@@ -20,6 +20,7 @@ body {
   background: #e9eaed;
   color: $black;
   font-family: "RobotoDraft", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding-top: 65px;
 }
 
 .header {
@@ -40,7 +41,7 @@ body {
     b { color: $red; }
   }
   .navbar-default .navbar-brand,
-  .navbar-default .navbar-nav>li>a  { color: #333; border-bottom: 3px solid #FFF; padding-bottom: 12px; }
+  .navbar-default .navbar-nav>li>a  { padding-bottom: 12px; }
   .navbar-default .navbar-nav>li>a:active { background-color: $grayDark; border-bottom-color: #999; }
   .navbar-inverse .navbar-nav .open .dropdown-menu .divider { color: #999 !important; }
   .navbar-inverse .navbar-nav .open .dropdown-menu li.active a { border-bottom: 0px; color: $red; }
