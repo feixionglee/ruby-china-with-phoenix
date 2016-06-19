@@ -12,6 +12,7 @@ defmodule Elixirer.Post do
     field :comments_count, :integer, default: 0
     belongs_to :user, Elixirer.User
     has_many :comments, Elixirer.Comment
+    has_many :post_likes, Elixirer.PostLike
     embeds_one :location, Elixirer.Location, on_replace: :delete
 
     timestamps

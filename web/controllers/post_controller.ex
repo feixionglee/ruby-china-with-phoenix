@@ -5,15 +5,16 @@ defmodule Elixirer.PostController do
 
   alias Elixirer.Post
   alias Elixirer.Comment
+  alias Elixirer.PostLike
 
   import Tirexs.HTTP
 
-  plug :authenticate_user  when action in [:new, :create, :edit, :update]
+  plug :authenticate_user  when action in [:new, :create, :edit, :update, :like]
   plug :load_categories when action in [:new, :create, :edit, :update]
 
   plug :scrub_params, "post" when action in [:create, :update]
 
-  def index(conn, params, user) do
+  def index(conn, params, _user) do
     query = if params["category"] do
       from(p in Post, where: p.category == ^params["category"], preload: [:user, comments: [:user]])
     else
@@ -59,7 +60,7 @@ defmodule Elixirer.PostController do
   end
 
 
-  def show(conn, %{"id" => id}, user) do
+  def show(conn, %{"id" => id}, _user) do
     post =
       Repo.get!(Post, id)
       |> Repo.preload([:user, comments: [:user]])
@@ -108,6 +109,23 @@ defmodule Elixirer.PostController do
     conn
     |> put_flash(:info, "Post deleted successfully.")
     |> redirect(to: post_path(conn, :index))
+  end
+
+  def like(conn, %{"id" => id}, user) do
+    post = from(e in Post, preload: [:post_likes]) |> Repo.get(id)
+    count = length post.post_likes
+
+    changeset = user
+      |> build_assoc(:post_likes)
+      |> PostLike.changeset(%{})
+      |> Ecto.Changeset.put_assoc(:post, post)
+
+    case Repo.insert(changeset) do
+      {:ok, post_like} ->
+        render conn, "like.json", post_id: post.id, likes_count: count + 1
+      {:error, changeset} ->
+        render conn, "like.json", post_id: post.id, likes_count: count
+    end
   end
 
   def action(conn, _) do

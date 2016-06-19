@@ -8,6 +8,7 @@ defmodule Elixirer.Comment do
     field :state, :string
     belongs_to :user, Elixirer.User
     belongs_to :post, Elixirer.Post
+    has_many :comment_likes, Elixirer.CommentLike
 
     timestamps
   end
@@ -28,7 +29,7 @@ defmodule Elixirer.Comment do
 
   def create_changeset(model, params \\ :empty, post) do
     changeset(model, params)
-    |> Ecto.Changeset.put_assoc(:post, post)
+    |> put_assoc(:post, post)
     |> update_parent_counter(1)
   end
 

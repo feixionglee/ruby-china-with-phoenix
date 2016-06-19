@@ -12,6 +12,8 @@ defmodule Elixirer.User do
     field :avatar, :string
     has_many :posts, Elixirer.Post
     has_many :comments, Elixirer.Comment
+    has_many :post_likes, Elixirer.PostLike
+    has_many :comment_likes, Elixirer.CommentLike
 
     timestamps
   end

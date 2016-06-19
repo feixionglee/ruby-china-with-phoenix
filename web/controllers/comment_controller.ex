@@ -4,7 +4,9 @@ defmodule Elixirer.CommentController do
   alias Elixirer.Post
   alias Elixirer.Comment
 
-  plug :authenticate_user  when action in [:create, :edit, :update]
+  alias Elixirer.CommentLike
+
+  plug :authenticate_user  when action in [:create, :edit, :update, :like]
 
   def index(conn, _params, user) do
     comments = Repo.all(user_comments(user))
@@ -74,6 +76,23 @@ defmodule Elixirer.CommentController do
     conn
     |> put_flash(:info, "Comment deleted successfully.")
     |> redirect(to: post_comment_path(conn, :index, post))
+  end
+
+  def like(conn, %{"id" => id}, user) do
+    comment = from(e in Comment, preload: [:comment_likes]) |> Repo.get(id)
+    count = length comment.comment_likes
+
+    changeset = user
+      |> build_assoc(:comment_likes)
+      |> CommentLike.changeset(%{})
+      |> Ecto.Changeset.put_assoc(:comment, comment)
+
+    case Repo.insert(changeset) do
+      {:ok, comment_like} ->
+        render conn, "like.json", comment_id: comment.id, likes_count: count + 1
+      {:error, changeset} ->
+        render conn, "like.json", comment_id: comment.id, likes_count: count
+    end
   end
 
   def action(conn, _) do
