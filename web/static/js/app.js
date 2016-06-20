@@ -27,3 +27,4 @@ import richEditor from "./rich_editor"
 richEditor()
 
 import "./post_form"
+import "./post_show"
