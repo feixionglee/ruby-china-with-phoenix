@@ -116,16 +116,26 @@ defmodule Elixirer.PostController do
     post = from(e in Post, preload: [:post_likes]) |> Repo.get(id)
     count = length post.post_likes
 
-    changeset = user
-      |> build_assoc(:post_likes)
-      |> PostLike.changeset(%{})
-      |> Ecto.Changeset.put_assoc(:post, post)
+    post_link = Repo.get_by PostLike, post_id: post.id, user_id: user.id
 
-    case Repo.insert(changeset) do
-      {:ok, post_like} ->
-        render conn, "like.json", post_id: post.id, likes_count: count + 1
-      {:error, changeset} ->
-        render conn, "like.json", post_id: post.id, likes_count: count
+    if post_link do
+      case Repo.delete(post_link) do
+        {:ok, _post_like} ->
+          render conn, "like.json", post_id: post.id, likes_count: count - 1, liked: false
+        {:error, _changeset} ->
+          render conn, "like.json", post_id: post.id, likes_count: count, liked: true
+      end
+    else
+      changeset = user
+        |> build_assoc(:post_likes)
+        |> PostLike.changeset(%{}, post)
+
+      case Repo.insert(changeset) do
+        {:ok, post_like} ->
+          render conn, "like.json", post_id: post.id, likes_count: count + 1, liked: true
+        {:error, changeset} ->
+          render conn, "like.json", post_id: post.id, likes_count: count, liked: false
+      end
     end
   end
 

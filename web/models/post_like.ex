@@ -14,9 +14,9 @@ defmodule Elixirer.PostLike do
   @doc """
   Builds a changeset based on the `struct` and `params`.
   """
-  def changeset(struct, params \\ %{}) do
-    struct
+  def changeset(model, params \\ %{}, post) do
+    model
     |> cast(params, [], @optional_fields)
-    # |> validate_required([])
+    |> put_assoc(:post, post)
   end
 end
