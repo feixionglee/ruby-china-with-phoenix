@@ -25,6 +25,7 @@ defmodule Elixirer.PostController do
             |> Repo.paginate(params)
 
     render conn, "index.html",
+      category: params["category"],
       posts: page.entries,
       page: page,
       page_number: page.page_number,

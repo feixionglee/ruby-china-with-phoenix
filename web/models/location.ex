@@ -30,8 +30,6 @@ defmodule Elixirer.Location do
 
   defimpl Phoenix.HTML.Safe, for: Elixirer.Location do
     def to_iodata(dec) do
-      IO.inspect dec
-      IO.inspect Poison.encode!(dec)
       Poison.encode!(dec)
     end
   end
