@@ -19,4 +19,9 @@ defmodule Elixirer.PostLike do
     |> cast(params, [], @optional_fields)
     |> put_assoc(:post, post)
   end
+
+  # def likes_count(post) do
+  #   query = from(p in PostLike, select: count("*"), where: p.post_id == ^post.id)
+  #   Repo.one(query)
+  # end
 end

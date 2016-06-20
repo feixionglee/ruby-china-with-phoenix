@@ -63,15 +63,18 @@ defmodule Elixirer.PostController do
 
   def show(conn, %{"id" => id}, _user) do
     post =
-      Repo.get!(Post, id)
-      |> Repo.preload([:user, comments: [:user]])
+      from(q in Post, preload: [:user, [comments: [:user, :comment_likes]], :post_likes])
+      |> Repo.get!(id)
+
 
     changeset =
       post
       |> build_assoc(:comments)
       |> Comment.changeset()
 
-    render(conn, "show.html", post: post, changeset: changeset, comments: post.comments)
+    likes_count = length(post.post_likes)
+
+    render(conn, "show.html", post: post, changeset: changeset, comments: post.comments, likes_count: likes_count)
   end
 
   def edit(conn, %{"id" => id}, user) do

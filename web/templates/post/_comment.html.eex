@@ -19,7 +19,7 @@
               <a class="reply-floor" href="#reply1">#1</a> · <abbr class="timeago" title="2016-04-20T17:03:00+08:00"> 25 days ago</abbr>
             </span>
             <span class="opts pull-right">
-                <a title="赞" data-count="0" data-state="" data-type="Reply" data-id="294487" class="likeable " href="#"><i class="fa fa-thumbs-up"></i> <span></span></a>
+                <a title="赞" data-count="0" data-state="" data-type="Reply" data-id=<%=comment.id%> class="likeable " href="#"><i class="fa fa-thumbs-up"></i> <span><%= length comment.comment_likes %> 个赞</span></a>
                 <a class="edit fa fa-pencil" data-uid="2" title="修改回帖" href="/topics/29792/replies/294487/edit"></a>
                 <a data-floor="1" data-login="huacnlee" title="Reply to this floor" class="btn-reply fa fa-mail-reply" href="#"></a>
             </span>
