@@ -82,16 +82,26 @@ defmodule Elixirer.CommentController do
     comment = from(e in Comment, preload: [:comment_likes]) |> Repo.get(id)
     count = length comment.comment_likes
 
-    changeset = user
-      |> build_assoc(:comment_likes)
-      |> CommentLike.changeset(%{})
-      |> Ecto.Changeset.put_assoc(:comment, comment)
+    comment_like = Repo.get_by CommentLike, comment_id: comment.id, user_id: user.id
 
-    case Repo.insert(changeset) do
-      {:ok, comment_like} ->
-        render conn, "like.json", comment_id: comment.id, likes_count: count + 1
-      {:error, changeset} ->
-        render conn, "like.json", comment_id: comment.id, likes_count: count
+    if comment_like do
+      case Repo.delete(comment_like) do
+        {:ok, _post_like} ->
+          render conn, "like.json", comment_id: comment.id, likes_count: count - 1, liked: false
+        {:error, _changeset} ->
+          render conn, "like.json", comment_id: comment.id, likes_count: count, liked: true
+      end
+    else
+      changeset = user
+        |> build_assoc(:comment_likes)
+        |> CommentLike.changeset(%{}, comment)
+
+      case Repo.insert(changeset) do
+        {:ok, comment_like} ->
+          render conn, "like.json", comment_id: comment.id, likes_count: count + 1, liked: true
+        {:error, changeset} ->
+          render conn, "like.json", comment_id: comment.id, likes_count: count, liked: false
+      end
     end
   end
 

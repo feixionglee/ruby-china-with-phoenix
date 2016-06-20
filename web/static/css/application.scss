@@ -737,6 +737,12 @@ img.emoji { width:20px; height:20px; }
       font-size: 12px;
       .reply-floor { color: #7AA87A; }
     }
+    @media (min-width: 1026px) {
+      .hideable { display: none; }
+    }
+    &:hover {
+      .hideable { display: inline-block; }
+    }
   }
 
   @media (max-width: 480px) {

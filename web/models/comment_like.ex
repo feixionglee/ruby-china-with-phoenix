@@ -14,9 +14,9 @@ defmodule Elixirer.CommentLike do
   @doc """
   Builds a changeset based on the `struct` and `params`.
   """
-  def changeset(struct, params \\ %{}) do
+  def changeset(struct, params \\ %{}, comment) do
     struct
     |> cast(params, [], @optional_fields)
-    # |> validate_required([])
+    |> put_assoc(:comment, comment)
   end
 end

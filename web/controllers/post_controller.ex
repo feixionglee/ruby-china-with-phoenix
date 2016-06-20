@@ -119,10 +119,10 @@ defmodule Elixirer.PostController do
     post = from(e in Post, preload: [:post_likes]) |> Repo.get(id)
     count = length post.post_likes
 
-    post_link = Repo.get_by PostLike, post_id: post.id, user_id: user.id
+    post_like = Repo.get_by PostLike, post_id: post.id, user_id: user.id
 
-    if post_link do
-      case Repo.delete(post_link) do
+    if post_like do
+      case Repo.delete(post_like) do
         {:ok, _post_like} ->
           render conn, "like.json", post_id: post.id, likes_count: count - 1, liked: false
         {:error, _changeset} ->
