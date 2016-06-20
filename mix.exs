@@ -39,10 +39,10 @@ defmodule Elixirer.Mixfile do
      {:gettext, "~> 0.9"},
      {:cowboy, "~> 1.0"},
      {:comeonin, "~> 2.0"},
-     {:qiniu,"~> 0.2.3", git: "https://github.com/feixionglee/qiniu.git"},
+     {:qiniu,"~> 0.3"},
      {:earmark, "~> 0.2.2", git: "https://github.com/pragdave/earmark.git"},
-     {:scrivener_ecto, "1.0.0-dev", git: "https://github.com/drewolson/scrivener_ecto.git"},
-     {:scrivener_html, "1.0.10", git: "https://github.com/mgwidmann/scrivener_html.git"},
+     {:scrivener_ecto, "~> 1.0.0-dev", git: "https://github.com/feixionglee/scrivener_ecto.git"},
+     {:scrivener_html, "~> 1.1", git: "https://github.com/feixionglee/scrivener_html.git"},
      {:tirexs, "~> 0.8"},
      {:scrivener_elasticsearch, path: "/Users/feixiongli/Workspace/scrivener_elasticsearch"}]
   end
