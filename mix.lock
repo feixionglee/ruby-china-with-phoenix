@@ -30,6 +30,7 @@
   "ranch": {:hex, :ranch, "1.2.1", "a6fb992c10f2187b46ffd17ce398ddf8a54f691b81768f9ef5f461ea7e28c762", [:make], []},
   "scrivener": {:git, "https://github.com/drewolson/scrivener", "269116f40c7be876bebe48619ea73d95bff71c92", [branch: "v2"]},
   "scrivener_ecto": {:git, "https://github.com/feixionglee/scrivener_ecto.git", "333b3302dfa9722ef4b3f770cf87fa9498f518c2", []},
+  "scrivener_elasticsearch": {:git, "https://github.com/feixionglee/scrivener_elasticsearch.git", "1d8946ffc1729ee7f2d277b74c4adfe0d11c2281", []},
   "scrivener_html": {:git, "https://github.com/feixionglee/scrivener_html.git", "020ed1517c4b699b1b2f0a7495104ecc66f193e6", []},
   "ssl_verify_fun": {:hex, :ssl_verify_fun, "1.1.0", "edee20847c42e379bf91261db474ffbe373f8acb56e9079acb6038d4e0bf414f", [:rebar, :make], []},
   "tirexs": {:hex, :tirexs, "0.8.2", "2852ea558b7180b81e5c31884c6a2c99c9ef677d2f653fbc56c5cb6885d29e45", [:mix], [{:exjsx, "~> 3.2.0", [hex: :exjsx, optional: false]}]}}
