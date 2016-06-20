@@ -12,8 +12,14 @@ defmodule Elixirer.ActiveTab do
           String.to_atom cate_name
         %{"category" => _} ->
           :posts
+        %{} ->
+          if conn.path_info == [] do
+            :empty
+          else
+            String.to_atom List.first(conn.path_info)
+          end
         _ ->
-          String.to_atom List.first(conn.path_info)
+          :empty
       end
     assign(conn, :active_tab, active_tab)
   end
