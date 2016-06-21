@@ -21,7 +21,7 @@
             <span class="opts pull-right">
               <span class="hideable">
                 <a class="edit fa fa-pencil" data-uid="3873" title="修改回帖" href="/topics/30307/replies/298829/edit"></a>
-                <a data-floor="1" data-login="cqcn1991" title="Reply to this floor" class="btn-reply fa fa-mail-reply" href="#"></a>
+                <a data-floor="1" data-login=<%=comment.user.name%> title="Reply to this floor" class="btn-reply fa fa-mail-reply" href="#"></a>
               </span>
               <a title="赞" data-count="0" data-state="" data-type="Reply" data-id=<%=comment.id%> class="likeable " href="#">
                 <i class="fa fa-thumbs-up"></i> <span><%= length comment.comment_likes %> 个赞</span>

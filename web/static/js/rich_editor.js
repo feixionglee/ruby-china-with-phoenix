@@ -1,15 +1,23 @@
 import $ from "jquery"
 
-let richEidtor = function () {
-  let editor = new MediumEditor('.editable', {
-    toolbar: {
-      buttons: ['bold', 'italic', 'underline', 'anchor', 'strikethrough', 'anchor', 'quote', 'removeFormat']
-    }
-  });
 
-  $('.editable').mediumInsert({
-      editor: editor
+var richEditor = new MediumEditor('.editable', {
+  toolbar: {
+    buttons: ['bold', 'italic', 'underline', 'anchor', 'strikethrough', 'anchor', 'quote', 'removeFormat']
+  },
+  placeholder: false
+});
+
+export function postEditor () {
+  $('.post-editable').mediumInsert({
+    editor: richEditor
   });
 }
 
-export default richEidtor
+export function commentEditor() {
+  $('.comment-editable').mediumInsert({
+    editor: richEditor
+  });
+}
+
+export default richEditor;

@@ -22,9 +22,10 @@ import "phoenix_html"
 
 import $ from "jquery"
 
-import richEditor from "./rich_editor"
+import richEditor, {postEditor, commentEditor} from "./rich_editor"
 
-richEditor()
+postEditor();
+commentEditor();
 
 import "./post_form"
 import "./post_show"

@@ -1,14 +1,14 @@
  <div id="reply" class="panel panel-default">
   <div class="panel-heading">回帖</div>
   <div class="panel-body">
-    <%= form_for @changeset, @action, fn f -> %>
+    <%= form_for @changeset, @action, [id: "new_reply"], fn f -> %>
       <%= if @changeset.action do %>
         <div class="alert alert-danger">
           <p>Oops, something went wrong! Please check the errors below.</p>
         </div>
       <% end %>
       <div class="form-group">
-        <%= textarea f, :content, class: "form-control editable comment-content" %>
+        <%= textarea f, :content, class: "form-control editable comment-editable comment-content" %>
       </div>
       <div class="submit-buttons">
         <button type="submit" id="reply-button" class="btn btn-primary" tabindex="2" ,="" data-disable-with="Reply">Reply</button>

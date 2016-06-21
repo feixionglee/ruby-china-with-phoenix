@@ -20,7 +20,7 @@
 
   <div class="form-group" id="post-content-editor">
     <%= label f, :content, gettext("Post Content"), class: "control-label" %>
-    <%= textarea f, :content, class: "form-control editable" %>
+    <%= textarea f, :content, class: "form-control editable post-editable" %>
     <%= error_tag f, :content %>
   </div>
 

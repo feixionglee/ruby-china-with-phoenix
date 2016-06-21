@@ -1,4 +1,4 @@
-<div class="row">
+<div id="post-show" class="row">
   <div class="col-md-9">
     <div class="topic-detail panel panel-default">
       <div class="panel-heading media clearfix">
@@ -32,7 +32,11 @@
       <div class="panel-footer clearfix">
         <div class="opts">
           <a title="赞" data-count="5" data-state="" data-type="Topic" data-id="29723" class="likeable " href="#">
-            <i class="fa fa-heart"></i> <span><%= @likes_count %> 个赞</span></a>
+            <i class="fa fa-heart"></i>
+            <%= if @likes_count > 0 do %>
+              <span><%= @likes_count %> 个赞</span>
+            <% end %>
+          </a>
           <a data-id="29723" class="follow" href="#"><i class="fa fa-eye"></i> 关注</a>
           <a title="收藏" class="bookmark " data-id="29723" href="#"><i class="fa fa-bookmark"></i> 收藏</a>
           <span class="pull-right opts">
@@ -54,11 +58,14 @@
     <div id="topic-sidebar" data-spy="affix" data-offset-top="65">
   <div class="panel panel-default">
     <div class="panel-body">
-      <a href="#" class="btn btn-block btn-sm btn-move-page" data-type="top"><i class="fa fa-arrow-up"></i></a>
+      <a href="#" class="btn btn-block btn-sm btn-move-page scroll-top"><i class="fa fa-arrow-up"></i></a>
       <div class="buttons">
         <div class="group likes opts">
           <a title="赞" data-count="5" data-state="" data-type="Topic" data-id="30271" class="likeable" href="#">
-            <i class="fa fa-heart-o"></i> <span><%= @likes_count %> 个赞</span>
+            <i class="fa fa-heart-o"></i>
+            <%= if @likes_count > 0 do %>
+              <span><%= @likes_count %> 个赞</span>
+            <% end %>
           </a>
         </div>
         <div class="group">
@@ -89,7 +96,7 @@
       <div class="group opts">
 
       </div>
-      <a href="#" class="btn btn-block btn-move-page" data-type="bottom"><i class="fa fa-arrow-down"></i></a>
+      <a href="#" class="btn btn-block btn-move-page scroll-bottom"><i class="fa fa-arrow-down"></i></a>
     </div>
   </div>
 
