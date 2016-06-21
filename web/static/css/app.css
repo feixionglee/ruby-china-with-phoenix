@@ -81,8 +81,9 @@ img[alt=emoji] {
 }
 
 #footer {
-  padding: 24px 0px;
-  background-color: #fff;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #9CA4A9;
 }
 
 .community-brand {
