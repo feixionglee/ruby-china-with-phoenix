@@ -31,12 +31,27 @@
 
       <div class="panel-footer clearfix">
         <div class="opts">
-          <a title="赞" data-count="5" data-state="" data-type="Topic" data-id="29723" class="likeable " href="#">
-            <i class="fa fa-heart"></i>
-            <%= if @likes_count > 0 do %>
-              <span><%= @likes_count %> 个赞</span>
-            <% end %>
-          </a>
+          <%= if Elixirer.PostLike.liked?(@post, @current_user) do %>
+            <a title="赞" data-count="<%=@likes_count%>" data-state="" data-id="<%=@post.id%>" class="likeable like-post active" href="#">
+              <i class="fa fa-heart"></i>
+              <span>
+                <%= if @likes_count > 0 do %>
+                  <%= @likes_count %> 个赞
+                <% end %>
+              </span>
+            </a>
+          <% else %>
+            <a title="赞" data-count="<%=@likes_count%>" data-state="" data-id="<%=@post.id%>" class="likeable like-post" href="#">
+              <i class="fa fa-heart-o"></i>
+              <span>
+                <%= if @likes_count > 0 do %>
+                  <%= @likes_count %> 个赞
+                <% end %>
+              </span>
+            </a>
+          <% end %>
+
+
           <a data-id="29723" class="follow" href="#"><i class="fa fa-eye"></i> 关注</a>
           <a title="收藏" class="bookmark " data-id="29723" href="#"><i class="fa fa-bookmark"></i> 收藏</a>
           <span class="pull-right opts">
@@ -48,7 +63,7 @@
       </div>
     </div>
 
-    <%= render "_comment.html", comments: @comments %>
+    <%= render "_comment.html", comments: @comments, current_user: @current_user %>
     <%= if @current_user do %>
       <%= render "_comment_form.html", changeset: @changeset,
                                       action: post_comment_path(@conn, :create, @post.id) %>
@@ -61,12 +76,25 @@
       <a href="#" class="btn btn-block btn-sm btn-move-page scroll-top"><i class="fa fa-arrow-up"></i></a>
       <div class="buttons">
         <div class="group likes opts">
-          <a title="赞" data-count="5" data-state="" data-type="Topic" data-id="30271" class="likeable" href="#">
-            <i class="fa fa-heart-o"></i>
-            <%= if @likes_count > 0 do %>
-              <span><%= @likes_count %> 个赞</span>
-            <% end %>
-          </a>
+          <%= if Elixirer.PostLike.liked?(@post, @current_user) do %>
+            <a title="赞" data-count="<%=@likes_count%>" data-state="" data-id="<%=@post.id%>" class="likeable like-post active" href="#">
+              <i class="fa fa-heart"></i>
+              <span>
+                <%= if @likes_count > 0 do %>
+                  <%= @likes_count %> 个赞
+                <% end %>
+              </span>
+            </a>
+          <% else %>
+            <a title="赞" data-count="<%=@likes_count%>" data-state="" data-id="<%=@post.id%>" class="likeable like-post" href="#">
+              <i class="fa fa-heart-o"></i>
+              <span>
+                <%= if @likes_count > 0 do %>
+                  <%= @likes_count %> 个赞
+                <% end %>
+              </span>
+            </a>
+          <% end %>
         </div>
         <div class="group">
           <div class="btn-group" role="group">

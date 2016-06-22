@@ -117,11 +117,4 @@ defmodule Elixirer.CommentController do
   defp user_comments(user) do
     assoc(user, :comments)
   end
-
-  # defp fetch_post(conn, _) do
-  #   post = Repo.get Post, conn.params["post_id"]
-  #   conn
-  #     |> assign(:post, post)
-  # end
-
 end

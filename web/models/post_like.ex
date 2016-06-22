@@ -1,6 +1,9 @@
 defmodule Elixirer.PostLike do
   use Elixirer.Web, :model
 
+  alias Elixirer.Repo
+  alias Elixirer.PostLike
+
   schema "post_likes" do
     belongs_to :user, Elixirer.User
     belongs_to :post, Elixirer.Post
@@ -20,8 +23,13 @@ defmodule Elixirer.PostLike do
     |> put_assoc(:post, post)
   end
 
-  # def likes_count(post) do
-  #   query = from(p in PostLike, select: count("*"), where: p.post_id == ^post.id)
-  #   Repo.one(query)
-  # end
+  def liked?(post, user) do
+    case user do
+      nil ->
+        false
+      _ ->
+        query = from(p in PostLike, where: p.post_id == ^post.id and p.user_id == ^user.id)
+        Repo.one(query)
+    end
+  end
 end
