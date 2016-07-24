@@ -6,9 +6,9 @@ defmodule Elixirer.PhotoController do
   alias Elixirer.Photo
 
   def create(conn, %{"files" => [plgu_upload]}) do
+    photo_name = plgu_upload.filename
     photo_key = Elixirer.QiniuService.photo_process(plgu_upload)
 
-
-    render(conn, "create.json", url: Photo.remote_url(photo_key))
+    render(conn, "create.json", name: photo_name, url: Photo.remote_url(photo_key))
   end
 end
