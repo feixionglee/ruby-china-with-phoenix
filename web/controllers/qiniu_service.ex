@@ -14,6 +14,21 @@ defmodule Elixirer.QiniuService do
 
   # end
 
+  # for %Plug.Upload
+  def photo_process(params) do
+    plug_upload = params
+    photo = sync(plug_upload)
+
+    try do
+      Repo.insert(%Photo{name: plug_upload.filename, key: photo["key"]})
+    rescue
+      Ecto.ConstraintError -> 'Existed'
+    end
+
+    photo["key"]
+  end
+
+  # for embed params, e.g. {user: name, avatar: %Plug.Upload}
   def photo_process(params, field) do
     plug_upload = Map.get(params, Atom.to_string(field))
 

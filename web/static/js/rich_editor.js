@@ -10,7 +10,16 @@ var richEditor = new MediumEditor('.editable', {
 
 export function postEditor () {
   $('.post-editable').mediumInsert({
-    editor: richEditor
+    editor: richEditor,
+    addons: {
+      images: {
+        fileUploadOptions: {
+          url: "/api/photos",
+          acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i
+        }
+      }
+    }
+
   });
 }
 
