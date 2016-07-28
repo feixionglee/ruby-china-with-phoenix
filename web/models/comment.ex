@@ -27,7 +27,7 @@ defmodule Elixirer.Comment do
     |> assoc_constraint(:post)
   end
 
-  def create_changeset(model, params \\ :empty, post) do
+  def create_changeset(model, params \\ %{}, post) do
     changeset(model, params)
     |> put_assoc(:post, post)
     |> update_parent_counter(1)
