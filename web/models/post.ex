@@ -5,10 +5,12 @@ defmodule Elixirer.Post do
   schema "posts" do
     field :title, :string
     field :slug, :string
+    field :url, :string
     field :content, :string
     field :category, :string
     field :cityname, :string
     field :is_great, :boolean
+    field :tags, {:array, :string}
     field :comments_count, :integer, default: 0
     belongs_to :user, Elixirer.User
     has_many :comments, Elixirer.Comment
@@ -67,6 +69,16 @@ defmodule Elixirer.Post do
           -> changeset
       end
     end
+  end
+
+  def post_query do
+    from po in Elixirer.Post,
+      where: is_nil(po.url)
+  end
+
+  def link_query do
+    from po in Elixirer.Post,
+      where: not(is_nil(po.url))
   end
 
   defp strip_title(changeset) do

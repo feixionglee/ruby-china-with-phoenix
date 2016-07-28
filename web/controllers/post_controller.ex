@@ -16,9 +16,12 @@ defmodule Elixirer.PostController do
 
   def index(conn, params, _user) do
     query = if params["category"] do
-      from(p in Post, where: p.category == ^params["category"], preload: [:user, comments: [:user]])
+      from p in Post.post_query,
+        where: p.category == ^params["category"],
+        preload: [:user, comments: [:user]]
     else
-      from(p in Post, preload: [:user, comments: [:user]])
+      from p in Post.post_query,
+        preload: [:user, comments: [:user]]
     end
 
     page = query
@@ -63,7 +66,7 @@ defmodule Elixirer.PostController do
 
   def show(conn, %{"id" => id}, user) do
     post =
-      from(q in Post, preload: [:user, [comments: [:user, :comment_likes]], :post_likes])
+      from(q in Post.post_query, preload: [:user, [comments: [:user, :comment_likes]], :post_likes])
       |> Repo.get!(id)
 
 
@@ -116,7 +119,7 @@ defmodule Elixirer.PostController do
   end
 
   def like(conn, %{"id" => id}, user) do
-    post = from(e in Post, preload: [:post_likes]) |> Repo.get(id)
+    post = from(e in Post.post_query, preload: [:post_likes]) |> Repo.get(id)
     count = length post.post_likes
 
     post_like = Repo.get_by PostLike, post_id: post.id, user_id: user.id
