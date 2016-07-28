@@ -39,6 +39,10 @@ defmodule Elixirer.Router do
       resources "/comments", CommentController
     end
 
+    resources "/links", LinkController do
+      resources "/comments", CommentController
+    end
+
     # get "/categories/:category", PostController, :index, as: :category
     get "/search", SearchController, :index, as: :search
 
@@ -66,5 +70,6 @@ defmodule Elixirer.Router do
     pipe_through :api
 
     post "/photos", PhotoController, :create
+    get "/tags/autocomplete", TagController, :autocomplete
   end
 end

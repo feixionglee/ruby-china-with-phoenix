@@ -1,0 +1,28 @@
+<h2>Show link</h2>
+
+<ul>
+
+  <li>
+    <strong>Url:</strong>
+    <%= @link.url %>
+  </li>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @link.title %>
+  </li>
+
+  <li>
+    <strong>Comments count:</strong>
+    <%= @link.comments_count %>
+  </li>
+
+  <li>
+    <strong>User:</strong>
+    <%= @link.user_id %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: link_path(@conn, :edit, @link) %>
+<%= link "Back", to: link_path(@conn, :index) %>

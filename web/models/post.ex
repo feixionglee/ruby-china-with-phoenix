@@ -29,8 +29,10 @@ defmodule Elixirer.Post do
   def category, do: @category
 
 
-  @required_fields ~w(title content category)
-  @optional_fields ~w(cityname)
+  @required_fields ~w(title content category)a
+  @link_required_fields ~w(url title)a
+
+  @optional_fields ~w(tags cityname)a
 
   @doc """
   Creates a changeset based on the `model` and `params`.
@@ -41,11 +43,21 @@ defmodule Elixirer.Post do
   def changeset(model, params \\ %{}) do
     model
     |> cast(params, @required_fields, @optional_fields)
+    |> validate_required(@required_fields)
     |> strip_title()
     |> validate_length(:title, min: 3, max: 60)
     |> validate_length(:content, min: 3)
     |> slugify_title()
     |> embed_location(params)
+  end
+
+  def link_changeset(model, params \\ %{}) do
+    # model
+    # |> cast(arrayed_tags(params), @link_required_fields, @optional_fields)
+    # |> validate_required(@link_required_fields)
+    model
+    |> cast(params, @link_required_fields, @optional_fields)
+    |> validate_required(@link_required_fields)
   end
 
   def embed_location(changeset, params) do
@@ -79,6 +91,14 @@ defmodule Elixirer.Post do
   def link_query do
     from po in Elixirer.Post,
       where: not(is_nil(po.url))
+  end
+
+  def arrayed_tags(params) do
+    if tags = params["tags"] do
+      Map.put params, "tags", String.split(tags)
+    else
+      params
+    end
   end
 
   defp strip_title(changeset) do

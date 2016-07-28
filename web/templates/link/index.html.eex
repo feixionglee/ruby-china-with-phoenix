@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-9">
+    <div class="topics panel panel-default">
+      <div class="panel-heading clearfix">
+        <div class="filter pull-right">
+          <span class="l">查看:</span>
+          <a href="/topics" class="active">默认</a> /
+          <a href="/topics/popular" class="popular"><i class="fa fa-diamond"></i> 优质帖子</a> /
+          <a href="/topics/no_reply">无人问津</a> /
+          <a href="/topics/last">最新创建</a>
+        </div>
+      </div>
+
+      <div class="panel-body">
+        <ul>
+        <%= for link <- @links do %>
+          <li><%= link.url %></li>
+          <li><%= link.title %></li>
+          <li><%= link.comments_count %></li>
+          <li><%= link.user_id %></li>
+
+          <%= link "Show", to: link_path(@conn, :show, link), class: "btn btn-default btn-xs" %>
+          <%= link "Edit", to: link_path(@conn, :edit, link), class: "btn btn-default btn-xs" %>
+          <%= link "Delete", to: link_path(@conn, :delete, link), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+        <% end %>
+        </ul>
+        <%= link "New link", to: link_path(@conn, :new) %>
+      </div>
+    </div>
+  </div>
+
+  <div class="sidebar col-md-3">
+    <%= render "_sidebar.html" %>
+  </div>
+</div>
+
