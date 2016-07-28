@@ -36,9 +36,9 @@ exports.config = {
           "web/static/vendor/css/bootstrap-select.css",
           "web/static/vendor/css/font-awesome.css",
           "web/static/css/vars.scss",
-          "web/static/vendor/cs/medium-editor.css",
-          "web/static/vendor/cs/medium-editor-theme-default.css",
-          "web/static/vendor/cs/medium-editor-insert-plugin.css"
+          "web/static/vendor/css/medium-editor.css",
+          "web/static/vendor/css/medium-editor-theme-default.css",
+          "web/static/vendor/css/medium-editor-insert-plugin.css"
         ]
       }
     },
