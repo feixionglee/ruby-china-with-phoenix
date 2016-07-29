@@ -1,0 +1,30 @@
+<div class="panel panel-default clearfix">
+  <div class="panel-body">
+    <div class="btn-group btn-block pull-left">
+      <a class="btn btn-primary" href="/posts/new">Start a new topic</a>
+      <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="/topics/new?node=3">Gem</a>
+        </li>
+        <li>
+          <a href="/topics/new?node=52">新手问题</a>
+        </li>
+        <li>
+          <a href="/topics/new?node=24">工具控</a>
+        </li>
+        <li>
+          <a href="/topics/new?node=44">部署</a>
+        </li>
+        <li>
+          <a href="/topics/new?node=27">瞎扯淡</a>
+        </li>
+      </ul>
+    </div>
+    <div class="btn-group btn-block pull-left">
+      <a class="btn btn-primary" style="padding-right: 46px;" href="/links/new">Start a new link</a>
+    </div>
+  </div>
+</div>

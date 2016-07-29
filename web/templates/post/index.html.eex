@@ -58,13 +58,13 @@
 
     </div>
 
-      <div id="sections" class="panel panel-default">
-  <div class="panel-heading">Node Navigation</div>
-  <div class="panel-body">
-    <div class="row node-list">
-      <div class="node media">
-        <label class="media-left">Ruby</label>
-        <span class="nodes media-body">
+    <div id="sections" class="panel panel-default">
+      <div class="panel-heading">Node Navigation</div>
+      <div class="panel-body">
+        <div class="row node-list">
+          <div class="node media">
+            <label class="media-left">Ruby</label>
+            <span class="nodes media-body">
               <span class="name"><a title="Sinatra" href="/topics/node43">Sinatra</a></span>
               <span class="name"><a title="Rails" href="/topics/node2">Rails</a></span>
               <span class="name"><a title="JRuby" href="/topics/node54">JRuby</a></span>
@@ -77,21 +77,21 @@
               <span class="name"><a title="新手问题" href="/topics/node52">新手问题</a></span>
               <span class="name"><a title="Testing" href="/topics/node37">Testing</a></span>
               <span class="name"><a title="mRuby" href="/topics/node66">mRuby</a></span>
-        </span>
-      </div>
-      <div class="node media">
-        <label class="media-left">Front-End</label>
-        <span class="nodes media-body">
+            </span>
+          </div>
+          <div class="node media">
+            <label class="media-left">Front-End</label>
+            <span class="nodes media-body">
               <span class="name"><a title="CSS" href="/topics/node41">CSS</a></span>
               <span class="name"><a title="JavaScript" href="/topics/node5">JavaScript</a></span>
               <span class="name"><a title="AngularJS" href="/topics/node71">AngularJS</a></span>
               <span class="name"><a title="ReactJS" href="/topics/node72">ReactJS</a></span>
               <span class="name"><a title="EmberJS" href="/topics/node73">EmberJS</a></span>
-        </span>
-      </div>
-      <div class="node media">
-        <label class="media-left">Back-End</label>
-        <span class="nodes media-body">
+            </span>
+          </div>
+          <div class="node media">
+            <label class="media-left">Back-End</label>
+            <span class="nodes media-body">
               <span class="name"><a title="算法" href="/topics/node40">算法</a></span>
               <span class="name"><a title="Mailer" href="/topics/node46">Mailer</a></span>
               <span class="name"><a title="Linux" href="/topics/node17">Linux</a></span>
@@ -104,19 +104,19 @@
               <span class="name"><a title="搜索分词" href="/topics/node39">搜索分词</a></span>
               <span class="name"><a title="Redis" href="/topics/node10">Redis</a></span>
               <span class="name"><a title="Database" href="/topics/node12">Database</a></span>
-        </span>
-      </div>
-      <div class="node media">
-        <label class="media-left">Mobile</label>
-        <span class="nodes media-body">
+            </span>
+          </div>
+          <div class="node media">
+            <label class="media-left">Mobile</label>
+            <span class="nodes media-body">
               <span class="name"><a title="iOS" href="/topics/node32">iOS</a></span>
               <span class="name"><a title="Android" href="/topics/node33">Android</a></span>
               <span class="name"><a title="RubyMotion" href="/topics/node74">RubyMotion</a></span>
-        </span>
-      </div>
-      <div class="node media">
-        <label class="media-left">分享</label>
-        <span class="nodes media-body">
+            </span>
+          </div>
+          <div class="node media">
+            <label class="media-left">分享</label>
+            <span class="nodes media-body">
               <span class="name"><a title="数学" href="/topics/node53">数学</a></span>
               <span class="name"><a title="产品控" href="/topics/node30">产品控</a></span>
               <span class="name"><a title="插画 / 设计" href="/topics/node50">插画 / 设计</a></span>
@@ -133,11 +133,11 @@
               <span class="name"><a title="产品推广" href="/topics/node69">产品推广</a></span>
               <span class="name"><a title="翻译" href="/topics/node68">翻译</a></span>
               <span class="name"><a title="求职" href="/topics/node64">求职</a></span>
-        </span>
-      </div>
-      <div class="node media">
-        <label class="media-left">Languages</label>
-        <span class="nodes media-body">
+            </span>
+          </div>
+          <div class="node media">
+            <label class="media-left">Languages</label>
+            <span class="nodes media-body">
               <span class="name"><a title="Obj-C" href="/topics/node48">Obj-C</a></span>
               <span class="name"><a title="Haskell" href="/topics/node59">Haskell</a></span>
               <span class="name"><a title="Erlang/Elixir" href="/topics/node35">Erlang/Elixir</a></span>
@@ -147,32 +147,32 @@
               <span class="name"><a title="Rust" href="/topics/node70">Rust</a></span>
               <span class="name"><a title="Node.js" href="/topics/node75">Node.js</a></span>
               <span class="name"><a title="Swift" href="/topics/node67">Swift</a></span>
-        </span>
-      </div>
-      <div class="node media">
-        <label class="media-left">Ruby China</label>
-        <span class="nodes media-body">
+            </span>
+          </div>
+          <div class="node media">
+            <label class="media-left">Ruby China</label>
+            <span class="nodes media-body">
               <span class="name"><a title="反馈" href="/topics/node22">反馈</a></span>
               <span class="name"><a title="社区开发" href="/topics/node23">社区开发</a></span>
               <span class="name"><a title="公告" href="/topics/node21">公告</a></span>
               <span class="name"><a title="NoPoint" href="/topics/node61">NoPoint</a></span>
-        </span>
-      </div>
-      <div class="node media">
-        <label class="media-left">活动</label>
-        <span class="nodes media-body">
+            </span>
+          </div>
+          <div class="node media">
+            <label class="media-left">活动</label>
+            <span class="nodes media-body">
               <span class="name"><a title="RubyConf" href="/topics/node51">RubyConf</a></span>
               <span class="name"><a title="RubyTuesday" href="/topics/node31">RubyTuesday</a></span>
               <span class="name"><a title="线下活动" href="/topics/node57">线下活动</a></span>
-        </span>
+            </span>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-      <div class="panel panel-default">
-  <div class="panel-heading">Hot cities</div>
-  <div class="panel-body location-list" style="text-align:center;">
+    <div class="panel panel-default">
+      <div class="panel-heading">Hot cities</div>
+      <div class="panel-body location-list" style="text-align:center;">
         <span class="name"><a href="/users/city/%E5%8C%97%E4%BA%AC">北京</a></span>
         <span class="name"><a href="/users/city/%E4%B8%8A%E6%B5%B7">上海</a></span>
         <span class="name"><a href="/users/city/%E6%9D%AD%E5%B7%9E">杭州</a></span>
@@ -185,11 +185,11 @@
         <span class="name"><a href="/users/city/%E5%A4%A7%E8%BF%9E">大连</a></span>
         <span class="name"><a href="/users/city/%E9%87%8D%E5%BA%86">重庆</a></span>
         <span class="name"><a href="/users/city/ShangHai">ShangHai</a></span>
-  </div>
-</div>
+      </div>
+    </div>
   </div>
 
   <div class="sidebar col-md-3">
     <%= render "_sidebar.html" %>
   </div>
-
+</div>

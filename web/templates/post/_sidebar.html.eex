@@ -1,63 +1,84 @@
+<%= render Elixirer.SharedView, "new_panel.html" %>
 
-  <div class="panel panel-default clearfix">
-    <div class="panel-body">
-      <div class="btn-group btn-block pull-left">
-        <a class="btn btn-primary" href="/posts/new">Start a new topic</a>
-        <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu">
-          <li>
-            <a href="/topics/new?node=3">Gem</a>
-          </li>
-          <li>
-            <a href="/topics/new?node=52">新手问题</a>
-          </li>
-          <li>
-            <a href="/topics/new?node=24">工具控</a>
-          </li>
-          <li>
-            <a href="/topics/new?node=44">部署</a>
-          </li>
-          <li>
-            <a href="/topics/new?node=27">瞎扯淡</a>
-          </li>
-        </ul>
-      </div>
-    </div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">小帖士</div>
+  <div class="panel-body">
+    目前最流行的 Rails 部署方式是 Passenger, Thin, Puma 或者 Unicorn 配合 Nginx 使用。
   </div>
-
-
-<div class="panel panel-default">
-<div class="panel-heading">小帖士</div>
-<div class="panel-body">
-  目前最流行的 Rails 部署方式是 Passenger, Thin, Puma 或者 Unicorn 配合 Nginx 使用。
-</div>
 </div>
 
 <div class="panel panel-default">
-<div class="panel-heading">推荐 Ruby 资源</div>
-<ul class="list-group">
-     <li class="list-group-item"><i class="fa fa-cloud"></i> <a href="/wiki/ruby-mirror">Ruby 镜像</a></li>
-     <li class="list-group-item"><i class="fa fa-diamond"></i> <a href="https://gems.ruby-china.org" target="_blank">RubyGems 镜像</a></li>
-     <li class="list-group-item"><i class="fa fa-youtube-play"></i> <a href="http://railscasts-china.com/" target="_blank" rel="nofollow">Rails 视频教程</a></li>
-     <li class="list-group-item"><i class="fa fa-archive"></i> <a href="http://guides.ruby-china.org">Rails Guides 中文版</a></li>
-</ul>
+  <div class="panel-heading">推荐 Ruby 资源</div>
+  <ul class="list-group">
+    <li class="list-group-item">
+      <i class="fa fa-cloud"></i>
+      <a href="/wiki/ruby-mirror">Ruby 镜像</a>
+    </li>
+    <li class="list-group-item">
+      <i class="fa fa-diamond"></i>
+      <a href="https://gems.ruby-china.org" target="_blank">RubyGems 镜像</a>
+    </li>
+    <li class="list-group-item">
+      <i class="fa fa-youtube-play"></i>
+      <a href="http://railscasts-china.com/" target="_blank" rel="nofollow">Rails 视频教程</a>
+      </li>
+    <li class="list-group-item">
+      <i class="fa fa-archive"></i>
+      <a href="http://guides.ruby-china.org">Rails Guides 中文版</a>
+    </li>
+  </ul>
 </div>
 
 <div class="panel panel-default">
-<div class="panel-heading">友情社区</div>
-<ul class="list-group" style="text-align:center">
- <li class="list-group-item"><a href="http://cnodejs.org" rel="nofollow" title="CNode 社区" target="_blank"><img src="//ruby-china-files.b0.upaiyun.com/assets/cnodejs.png" style="width:120px;margin: 4px 0;"></a></li>
-  <li class="list-group-item" style="display:none"><a href="http://f2e.im" target="_blank" rel="nofollow" title="F2E 前端社区"><img src="//ruby-china-files.b0.upaiyun.com/photo/d17f84604f177a8148bc60c39d160398.png" style="width:120px;"></a></li>
-  <li class="list-group-item" style="display:none"> <a href="http://swift.sh" rel="nofollow" title="Swift 中文社区" target="_blank"><img src="https://ruby-china-files.b0.upaiyun.com/assets/swift_sh.png" style="width:120px;"></a></li>
-   <li class="list-group-item"><a href="http://golangtc.com/" rel="nofollow" title="Golang 中国" target="_blank"><img src="//ruby-china-files.b0.upaiyun.com/photo/2014/ace251f3e20ff4eb81a30f61d110d87e.png" style="width:120px; margin:6px 0;"></a></li>
-   <li class="list-group-item"><a href="http://phphub.org" target="_blank" rel="nofollow"><img src="//ruby-china-files.b0.upaiyun.com/photo/2014/6f64d01b427175a24be9481fcac9b63a.png" style="width:120px; margin: 6px 0;"></a></li>
-   <li class="list-group-item"><a href="http://segmentfault.com" target="_blank" rel="nofollow"><img src="//ruby-china-files.b0.upaiyun.com/photo/2014/bc0ad4d10d5b9cd606c4b8180eb7e4bb.png" style="width:120px; margin: 6px 0;"></a></li>
-   <li class="list-group-item"><a href="http://elixir-cn.com" target="_blank" rel="nofollow"><img src="//ruby-china-files.b0.upaiyun.com/photo/2015/f65fb5a10d3392a1db841c85716dd8f6.png" style="width: 120px; margin: 0px 0;"></a></li>
-   <li class="list-group-item"><a href="http://ionichina.com/" target="_blank" rel="nofollow"><img src="//ruby-china-files.b0.upaiyun.com/photo/2015/63aba221c446d3e65b83acf37658a129.png" style="width: 120px; margin: 0px 0;"></a></li>
-   <li class="list-group-item"><a href="https://testerhome.com/" target="_blank" rel="nofollow"><img src="//ruby-china-files.b0.upaiyun.com/photo/2015/d148d71bcf051576f0211feff7f6588c.png" style="width: 120px; margin: 6px 0;"></a></li>
-</ul>
+  <div class="panel-heading">友情社区</div>
+  <ul class="list-group" style="text-align:center">
+    <li class="list-group-item">
+      <a href="http://cnodejs.org" rel="nofollow" title="CNode 社区" target="_blank">
+        <img src="//ruby-china-files.b0.upaiyun.com/assets/cnodejs.png" style="width:120px;margin: 4px 0;">
+      </a>
+    </li>
+    <li class="list-group-item" style="display:none">
+      <a href="http://f2e.im" target="_blank" rel="nofollow" title="F2E 前端社区">
+        <img src="//ruby-china-files.b0.upaiyun.com/photo/d17f84604f177a8148bc60c39d160398.png" style="width:120px;">
+      </a>
+    </li>
+    <li class="list-group-item" style="display:none">
+      <a href="http://swift.sh" rel="nofollow" title="Swift 中文社区" target="_blank">
+        <img src="https://ruby-china-files.b0.upaiyun.com/assets/swift_sh.png" style="width:120px;">
+      </a>
+    </li>
+    <li class="list-group-item">
+      <a href="http://golangtc.com/" rel="nofollow" title="Golang 中国" target="_blank">
+        <img src="//ruby-china-files.b0.upaiyun.com/photo/2014/ace251f3e20ff4eb81a30f61d110d87e.png" style="width:120px; margin:6px 0;">
+      </a>
+    </li>
+    <li class="list-group-item">
+      <a href="http://phphub.org" target="_blank" rel="nofollow">
+        <img src="//ruby-china-files.b0.upaiyun.com/photo/2014/6f64d01b427175a24be9481fcac9b63a.png" style="width:120px; margin: 6px 0;">
+      </a>
+    </li>
+    <li class="list-group-item">
+      <a href="http://segmentfault.com" target="_blank" rel="nofollow">
+        <img src="//ruby-china-files.b0.upaiyun.com/photo/2014/bc0ad4d10d5b9cd606c4b8180eb7e4bb.png" style="width:120px; margin: 6px 0;">
+      </a>
+    </li>
+    <li class="list-group-item">
+      <a href="http://elixir-cn.com" target="_blank" rel="nofollow">
+        <img src="//ruby-china-files.b0.upaiyun.com/photo/2015/f65fb5a10d3392a1db841c85716dd8f6.png" style="width: 120px; margin: 0px 0;">
+      </a>
+    </li>
+    <li class="list-group-item">
+      <a href="http://ionichina.com/" target="_blank" rel="nofollow">
+        <img src="//ruby-china-files.b0.upaiyun.com/photo/2015/63aba221c446d3e65b83acf37658a129.png" style="width: 120px; margin: 0px 0;">
+      </a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://testerhome.com/" target="_blank" rel="nofollow">
+        <img src="//ruby-china-files.b0.upaiyun.com/photo/2015/d148d71bcf051576f0211feff7f6588c.png" style="width: 120px; margin: 6px 0;">
+      </a>
+    </li>
+  </ul>
 </div>
 
 <!--div class="panel panel-default">
