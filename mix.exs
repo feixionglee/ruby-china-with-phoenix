@@ -19,7 +19,7 @@ defmodule Elixirer.Mixfile do
   def application do
     [mod: {Elixirer, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :comeonin, :qiniu, :tirexs]]
+                    :phoenix_ecto, :postgrex, :comeonin, :qiniu, :tirexs, :edeliver]]
   end
 
   # Specifies which paths to compile per environment.
@@ -44,7 +44,8 @@ defmodule Elixirer.Mixfile do
      {:scrivener_ecto, "~> 1.0.0-dev", git: "https://github.com/feixionglee/scrivener_ecto.git"},
      {:scrivener_html, "~> 1.1", git: "https://github.com/feixionglee/scrivener_html.git"},
      {:tirexs, "~> 0.8"},
-     {:scrivener_elasticsearch, git: "https://github.com/feixionglee/scrivener_elasticsearch.git"}]
+     {:scrivener_elasticsearch, git: "https://github.com/feixionglee/scrivener_elasticsearch.git"},
+     {:edeliver, "~> 1.2.9"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.
