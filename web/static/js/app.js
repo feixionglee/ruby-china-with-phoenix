@@ -29,3 +29,4 @@ commentEditor();
 
 import "./post_form"
 import "./post_show"
+import "./link"
