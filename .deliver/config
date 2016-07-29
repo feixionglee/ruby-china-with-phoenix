@@ -1,12 +1,16 @@
 APP="Elixirer"
 
 BUILD_HOST="remote-china.org"
-BUILD_USER="deploy"
-BUILD_AT="/tmp/edeliver/elixirer/builds"
+BUILD_USER="git"
+BUILD_AT="/home/git/elixirer.git"
 
 STAGING_HOSTS="stage.remote-china.org"
 STAGING_USER="deploy"
-DELIVER_TO="/home/deploy/stages"
+TEST_AT="/home/deploy/staging"
+
+PRODUCTION_HOST="remote-china.org"
+PRODUCTION_USER="deploy"
+DELIVER_TO="/home/deploy/releases"
 
 # For *Phoenix* projects, symlink prod.secret.exs to our tmp source
 pre_erlang_get_and_update_deps() {
