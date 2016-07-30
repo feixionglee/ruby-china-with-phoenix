@@ -1,4 +1,4 @@
-APP="Elixirer"
+APP="elixirer"
 
 BUILD_HOST="remote-china.org"
 BUILD_USER="deploy"
