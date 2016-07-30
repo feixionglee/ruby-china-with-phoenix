@@ -2,7 +2,7 @@ APP="Elixirer"
 
 BUILD_HOST="remote-china.org"
 BUILD_USER="deploy"
-BUILD_AT="/home/deploy/builds"
+BUILD_AT="/tmp/edeliver/builds/elixirer"
 
 STAGING_HOSTS="stage.remote-china.org"
 STAGING_USER="deploy"
