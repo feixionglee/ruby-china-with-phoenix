@@ -1,8 +1,8 @@
 APP="Elixirer"
 
 BUILD_HOST="remote-china.org"
-BUILD_USER="git"
-BUILD_AT="/home/git/elixirer.git"
+BUILD_USER="deploy"
+BUILD_AT="/home/deploy/builds"
 
 STAGING_HOSTS="stage.remote-china.org"
 STAGING_USER="deploy"
