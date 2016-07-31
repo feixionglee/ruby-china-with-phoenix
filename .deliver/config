@@ -8,9 +8,9 @@ STAGING_HOSTS="stage.remote-china.org"
 STAGING_USER="deploy"
 TEST_AT="/home/deploy/staging"
 
-PRODUCTION_HOST="remote-china.org"
+PRODUCTION_HOSTS="remote-china.org"
 PRODUCTION_USER="deploy"
-DELIVER_TO="/home/deploy/releases"
+DELIVER_TO="/home/deploy/production"
 
 # For *Phoenix* projects, symlink prod.secret.exs to our tmp source
 pre_erlang_get_and_update_deps() {
