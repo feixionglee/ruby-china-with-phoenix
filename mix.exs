@@ -45,7 +45,7 @@ defmodule Elixirer.Mixfile do
      {:scrivener_html, "~> 1.1", git: "https://github.com/feixionglee/scrivener_html.git"},
      {:tirexs, "~> 0.8"},
      {:scrivener_elasticsearch, git: "https://github.com/feixionglee/scrivener_elasticsearch.git"},
-     {:edeliver, "~> 1.2.9"}]
+     {:edeliver, "~> 1.3.0"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.
