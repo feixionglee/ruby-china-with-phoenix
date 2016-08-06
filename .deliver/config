@@ -1,6 +1,6 @@
 APP="elixirer"
 
-BUILD_HOST="remote-china.org"
+BUILD_HOST="build.remote-china.org"
 BUILD_USER="deploy"
 BUILD_AT="/tmp/edeliver/builds/elixirer"
 
@@ -8,7 +8,7 @@ STAGING_HOSTS="stage.remote-china.org"
 STAGING_USER="deploy"
 TEST_AT="/home/deploy/staging"
 
-PRODUCTION_HOSTS="remote-china.org"
+PRODUCTION_HOSTS="prod.remote-china.org"
 PRODUCTION_USER="deploy"
 DELIVER_TO="/home/deploy/production"
 
