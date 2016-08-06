@@ -10,7 +10,7 @@ BUILD_AT="/tmp/edeliver/builds/elixirer"
 # STAGING_USER="deploy"
 # TEST_AT="/home/deploy/staging"
 
-PRODUCTION_HOSTS="prod.remote-china.org"
+PRODUCTION_HOSTS="remote-china.org"
 PRODUCTION_USER="deploy"
 DELIVER_TO="/home/deploy/production"
 
