@@ -1,6 +1,4 @@
 APP="elixirer"
-HOSTS="remote-china.org"
-PORT="5000"
 
 BUILD_HOST="build.remote-china.org"
 BUILD_USER="deploy"
