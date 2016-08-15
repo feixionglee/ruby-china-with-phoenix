@@ -41,12 +41,13 @@ defmodule Elixirer.Mixfile do
      {:comeonin, "~> 2.0"},
      {:qiniu,"~> 0.3"},
      {:earmark, "~> 0.2.2", git: "https://github.com/pragdave/earmark.git"},
-     {:scrivener_ecto, "~> 1.0.0-dev", git: "https://github.com/feixionglee/scrivener_ecto.git"},
-     {:scrivener_html, "~> 1.1", git: "https://github.com/feixionglee/scrivener_html.git"},
+     {:scrivener_ecto, "~> 1.0"},
+     {:scrivener_html, "~> 1.1"},
      {:tirexs, "~> 0.8"},
      {:scrivener_elasticsearch, git: "https://github.com/feixionglee/scrivener_elasticsearch.git"},
-     {:edeliver, "~> 1.3.0"},
-     {:exrm, "~> 1.0.8"}]
+     {:edeliver, "~> 1.4.0"},
+     {:exrm, ">= 0.16.0", warn_missing: false},
+    ]
   end
 
   # Aliases are shortcut or tasks specific to the current project.
