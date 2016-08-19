@@ -46,7 +46,8 @@ defmodule Elixirer.Mixfile do
      {:tirexs, "~> 0.8"},
      {:scrivener_elasticsearch, git: "https://github.com/feixionglee/scrivener_elasticsearch.git"},
      {:edeliver, "~> 1.4.0"},
-     {:exrm, ">= 0.16.0", warn_missing: false},
+     # {:exrm, ">= 0.16.0", warn_missing: false},
+     {:distillery, "~> 0.9"}
     ]
   end
 
