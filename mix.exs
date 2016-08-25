@@ -19,7 +19,7 @@ defmodule Elixirer.Mixfile do
   def application do
     [mod: {Elixirer, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :comeonin, :qiniu, :tirexs, :edeliver]]
+                    :phoenix_ecto, :postgrex, :comeonin, :qiniu, :tirexs, :scrivener_ecto, :edeliver]]
   end
 
   # Specifies which paths to compile per environment.
