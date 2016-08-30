@@ -1,4 +1,6 @@
 require IEx
+require AlchemicAvatar
+
 defmodule Elixirer.User do
   use Elixirer.Web, :model
 
@@ -42,7 +44,14 @@ defmodule Elixirer.User do
     |> changeset(params)
     |> cast(params, ~w(password), [])
     |> validate_length(:password, min: 6, max: 100)
+    |> gen_avatar()
     |> put_pass_hash()
+  end
+
+  defp gen_avatar(changeset) do
+    file = AlchemicAvatar.generate changeset.changes.name, 200
+
+    put_change(changeset, :avatar, QiniuService.real_sync(file)["key"])
   end
 
   defp put_pass_hash(changeset) do

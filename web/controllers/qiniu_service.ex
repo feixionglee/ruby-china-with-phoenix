@@ -42,12 +42,16 @@ defmodule Elixirer.QiniuService do
     end
   end
 
-  defp sync(plug_upload) do
+  def sync(plug_upload) do
     policy = Qiniu.PutPolicy.build("elixirer-dev")
 
-    case Qiniu.Uploader.upload policy, plug_upload.path do
+    real_sync(policy, plug_upload.path)
+  end
+
+  def real_sync(policy \\ Qiniu.PutPolicy.build("elixirer-dev"), file_path) do
+    case Qiniu.Uploader.upload policy, file_path do
       %HTTPoison.Response{status_code: 200, body: body} ->
-        Poison.decode!(body)
+        body
       %HTTPoison.Response{status_code: 404} ->
         IO.puts "Not found :("
       %HTTPoison.Error{reason: reason} ->
