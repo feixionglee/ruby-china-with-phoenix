@@ -19,7 +19,8 @@ defmodule Elixirer.Mixfile do
   def application do
     [mod: {Elixirer, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :comeonin, :qiniu, :tirexs, :scrivener_ecto, :scrivener_html, :edeliver]]
+                    :phoenix_ecto, :postgrex, :comeonin, :qiniu, :tirexs, :scrivener_ecto, :scrivener_html,
+                    :scrivener_elasticsearch, :alchemic_avatar, :edeliver]]
   end
 
   # Specifies which paths to compile per environment.
@@ -41,6 +42,7 @@ defmodule Elixirer.Mixfile do
      {:comeonin, "~> 2.0"},
      {:qiniu,"~> 0.3.3"},
      {:earmark, "~> 0.2"},
+     {:alchemic_avatar, "~> 0.1.0"},
      {:scrivener_ecto, "~> 1.0"},
      {:scrivener_html, "~> 1.1"},
      {:tirexs, "~> 0.8"},

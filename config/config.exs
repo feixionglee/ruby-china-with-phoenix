@@ -32,3 +32,10 @@ config :elixirer, ecto_repos: [Elixirer.Repo]
 
 config :scrivener_html,
   routes_helper: Elixirer.Router.Helpers
+
+config :alchemic_avatar,
+  cache_base_path: "static",             # default is "static"
+  colors_palette: :iwanthue,             # default is :google
+  weight: 200,                           # default is 300
+  annotate_position: "-0+10",             # default is -0+5
+  app_name: :elixirer #your app name(required)

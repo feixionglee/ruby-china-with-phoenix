@@ -3,7 +3,12 @@ defmodule Elixirer.ViewHelpers do
   alias Elixirer.User
 
   def avatar_url(user) do
-    Elixirer.Photo.remote_url(user.avatar)
+    case user.avatar do
+      nil ->
+        AlchemicAvatar.generate user.name, 200
+      _ ->
+        Elixirer.Photo.remote_url(user.avatar)
+    end
   end
 
   def last_comment_at(comments) do
