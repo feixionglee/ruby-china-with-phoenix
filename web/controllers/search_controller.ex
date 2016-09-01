@@ -46,7 +46,8 @@ defmodule Elixirer.SearchController do
           page_size: page.page_size,
           total_pages: page.total_pages,
           total_entries: page.total_entries
-      {:error, 404, result} ->
+      # {:error, 404, result} ->
+      _ ->
         render(conn, Elixirer.ErrorView, "404.html")
     end
   end
