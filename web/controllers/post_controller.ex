@@ -15,13 +15,14 @@ defmodule Elixirer.PostController do
   plug :scrub_params, "post" when action in [:create, :update]
 
   def index(conn, params, _user) do
-    query = if params["category"] do
-      from p in Post.post_query,
-        where: p.category == ^params["category"],
-        preload: [:user, comments: [:user]]
-    else
-      from p in Post.post_query,
-        preload: [:user, comments: [:user]]
+    query = case params["category"] do
+      x when is_nil(x) ->
+        from p in Post.post_query,
+          preload: [:user, comments: [:user]]
+      _ ->
+        from p in Post.post_query,
+          where: p.category == ^params["category"],
+          preload: [:user, comments: [:user]]
     end
 
     page = query

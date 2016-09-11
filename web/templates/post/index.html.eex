@@ -28,7 +28,7 @@
                 <i title="精华帖" class="fa fa-diamond"></i>
               </div>
               <div class="info">
-                <a class="node" href="/categories/<%= post.category %>"><%= post.category %></a>
+                <a class="node" href="/posts?category=<%= post.category %>"><%= post.category %></a>
                 •
                 <a data-name="mizuhashi" href="/users/<%= post.user.name %>"><%= post.user.name %></a>
                 <span class="hidden-mobile">
