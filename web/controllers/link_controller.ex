@@ -33,13 +33,13 @@ defmodule Elixirer.LinkController do
     end
   end
 
-  def edit(conn, %{"id" => id}) do
+  def edit(conn, %{"id" => id}, user) do
     link = Repo.get!(Post, id)
     changeset = Post.link_changeset(link)
     render(conn, "edit.html", link: link, changeset: changeset)
   end
 
-  def update(conn, %{"id" => id, "link" => link_params}) do
+  def update(conn, %{"id" => id, "link" => link_params}, user) do
     link = Repo.get!(Post, id)
     changeset = Post.link_changeset(link, Post.arrayed_tags(link_params))
 

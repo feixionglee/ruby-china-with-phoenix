@@ -8,7 +8,7 @@
         <%= render "form.html", changeset: @changeset,
                         action: link_path(@conn, :create) %>
 
-        <%= link "Back", to: link_path(@conn, :index) %>
+        <%= link "Back", to: post_path(@conn, :index) %>
       </div>
     </div>
   </div>
