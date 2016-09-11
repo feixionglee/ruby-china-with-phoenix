@@ -67,9 +67,8 @@ defmodule Elixirer.PostController do
 
   def show(conn, %{"id" => id}, user) do
     post =
-      from(q in Post.post_query, preload: [:user, [comments: [:user, :comment_likes]], :post_likes])
+      from(q in Post, preload: [:user, [comments: [:user, :comment_likes]], :post_likes])
       |> Repo.get!(id)
-
 
     changeset =
       post

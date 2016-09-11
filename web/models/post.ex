@@ -58,6 +58,9 @@ defmodule Elixirer.Post do
     model
     |> cast(params, @link_required_fields, @optional_fields)
     |> validate_required(@link_required_fields)
+    |> strip_title()
+    |> validate_length(:title, min: 3, max: 60)
+    |> slugify_title()
   end
 
   def embed_location(changeset, params) do
