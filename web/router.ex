@@ -39,7 +39,7 @@ defmodule Elixirer.Router do
       resources "/comments", CommentController
     end
 
-    resources "/links", LinkController do
+    resources "/links", LinkController, only: [:new, :create, :edit, :update] do
       resources "/comments", CommentController
     end
 

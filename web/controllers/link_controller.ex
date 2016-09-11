@@ -4,32 +4,33 @@ defmodule Elixirer.LinkController do
 
   alias Elixirer.Post
 
-  def index(conn, _params) do
-    links = Repo.all(Post.link_query)
-    render(conn, "index.html", links: links)
-  end
+  import Tirexs.HTTP
 
-  def new(conn, _params) do
-    changeset = Post.link_changeset(%Post{})
+  plug :authenticate_user  when action in [:new, :create, :edit, :update, :like]
+
+  def new(conn, _params, user) do
+    changeset =
+      user
+      |> build_assoc(:posts)
+      |> Post.link_changeset()
+
     render(conn, "new.html", changeset: changeset)
   end
 
-  def create(conn, %{"link" => link_params}) do
-    changeset = Post.link_changeset(%Post{}, Post.arrayed_tags(link_params))
+  def create(conn, %{"link" => link_params}, user) do
+    changeset =
+      user
+      |> build_assoc(:posts)
+      |> Post.link_changeset(Post.arrayed_tags(link_params))
 
     case Repo.insert(changeset) do
-      {:ok, _link} ->
+      {:ok, post} ->
         conn
         |> put_flash(:info, "Link created successfully.")
-        |> redirect(to: link_path(conn, :index))
+        |> redirect(to: post_path(conn, :show, post))
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
-  end
-
-  def show(conn, %{"id" => id}) do
-    link = Repo.get!(Post, id)
-    render(conn, "show.html", link: link)
   end
 
   def edit(conn, %{"id" => id}) do
@@ -52,15 +53,9 @@ defmodule Elixirer.LinkController do
     end
   end
 
-  def delete(conn, %{"id" => id}) do
-    link = Repo.get!(Post, id)
-
-    # Here we use delete! (with a bang) because we expect
-    # it to always work (and if it does not, it will raise).
-    Repo.delete!(link)
-
-    conn
-    |> put_flash(:info, "Link deleted successfully.")
-    |> redirect(to: link_path(conn, :index))
+  def action(conn, _) do
+    apply(__MODULE__, action_name(conn),
+        [conn, conn.params, conn.assigns.current_user])
   end
+
 end

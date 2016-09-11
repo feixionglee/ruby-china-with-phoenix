@@ -14,12 +14,12 @@
       <div id="main-nav-menu">
         <ul class="nav navbar-nav">
           <%= state_link @conn, gettext("topics"), active: :posts, to: "/posts" %>
-          <%= state_link @conn, gettext("links"), active: :links, to: "/links" %>
-          <%= state_link @conn, gettext("wiki"), active: :wiki, to: "/wiki" %>
-          <%= state_link @conn, gettext("ask"), active: :ask, to: "/posts?category=ask" %>
+          <%=# state_link @conn, gettext("links"), active: :links, to: "/links" %>
+          <%=# state_link @conn, gettext("ask"), active: :ask, to: "/posts?category=ask" %>
           <%= state_link @conn, gettext("jobs"), active: :jobs, to: "/posts?category=jobs" %>
           <%= state_link @conn, gettext("meetup"), active: :meetup, to: "/posts?category=meetup" %>
-          <%= state_link @conn, gettext("nodes"), active: :nodes, to: "/nodes" %>
+          <%= state_link @conn, gettext("wiki"), active: :wiki, to: "/wiki" %>
+          <%=# state_link @conn, gettext("nodes"), active: :nodes, to: "/nodes" %>
         </ul>
       </div>
         <ul class="nav navbar-nav navbar-right">

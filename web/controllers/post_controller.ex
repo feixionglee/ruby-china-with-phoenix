@@ -17,10 +17,10 @@ defmodule Elixirer.PostController do
   def index(conn, params, _user) do
     query = case params["category"] do
       x when is_nil(x) ->
-        from p in Post.post_query,
+        from p in Post,
           preload: [:user, comments: [:user]]
       _ ->
-        from p in Post.post_query,
+        from p in Post,
           where: p.category == ^params["category"],
           preload: [:user, comments: [:user]]
     end

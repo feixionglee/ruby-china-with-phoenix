@@ -13,38 +13,11 @@
 
       <div class="panel-body">
         <%= for post <- @posts do %>
-          <div class="topic media topic-29777">
-            <div class="avatar media-left">
-              <%= link to: user_path(@conn, :show, post.user) do %>
-                <img class="media-object avatar-48" src=<%= avatar_url(post.user)%> alt="23529">
-              <% end %>
-            </div>
-            <div class="infos media-body">
-              <div class="title media-heading">
-                <a title="npm 没有 Gemfile.lock 这样的机制，怎么想的？" href="/topics/29777">
-                <%= link to: post_path(@conn, :show, post) do %>
-                  <%= post.title %>
-                <% end %>
-                <i title="精华帖" class="fa fa-diamond"></i>
-              </div>
-              <div class="info">
-                <a class="node" href="/posts?category=<%= post.category %>"><%= post.category %></a>
-                •
-                <a data-name="mizuhashi" href="/users/<%= post.user.name %>"><%= post.user.name %></a>
-                <span class="hidden-mobile">
-                  •
-                  <%= if length(post.comments) > 0 do %>
-                    <%= raw last_comment_at(post.comments) %>
-                  <% else %>
-                    Created at <%= post.inserted_at %>
-                  <% end %>
-                </span>
-              </div>
-            </div>
-            <div class="count media-right">
-                <a class="state-false state-true" href="/topics/29777#reply34"><%= post.comments_count %></a>
-            </div>
-          </div>
+          <%= if is_nil(post.url) do %>
+            <%= render "_topic.html", conn: @conn, post: post %>
+          <% else %>
+            <%= render "_link.html", conn: @conn, post: post %>
+          <% end %>
         <% end %>
       </div>
 
