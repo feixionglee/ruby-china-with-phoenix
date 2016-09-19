@@ -11,6 +11,37 @@
     <%= error_tag f, :url %>
   </div>
 
+  <div class="spacer" id="newlink-with-image-upload">
+    <div class="roundfield " id="image-field" style="display: block;">
+      <span class="title ">image</span>
+      <div class="roundfield-content">
+        <div id="new-link-image-name-display" hidden="" style="display: none;">
+          <div class="c-form-group">
+            <div id="image-name" class="input"></div>
+            <span class="clear-input-button">x</span>
+          </div>
+        </div>
+        <div id="new-link-image-input" class="image-post-upload image-upload-drop-target">
+          <div class="file-drop-label-icon"></div>
+          <div class="file-drop-label">Drop image here or</div>
+          <label class="file-upload-button c-btn c-btn-primary">
+            <div class="file-upload-icon"></div>
+            Choose File
+            <input id="fileupload" type="file">
+          </label>
+        </div>
+
+        <div class="new-link-preview-throbber" style="display: none;"></div>
+        <div id="new-link-preview" hidden="">
+          <div class="new-link-preview-title"></div>
+          <a class="new-link-preview-domain" href="#"></a>
+        </div>
+        <div id="new-link-image-preview" style="display: none;"></div>
+      </div>
+    </div>
+  </div>
+
+
   <div class="form-group">
     <%= label f, :title, class: "control-label" %>
     <%= text_input f, :title, class: "form-control" %>
