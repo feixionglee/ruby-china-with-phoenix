@@ -6,9 +6,9 @@
   </div>
   <div class="infos media-body">
     <div class="title media-heading">
-      <%= link to: post_path(@conn, :show, @post) do %>
+      <a href=<%= @post.url %> target="_blank">
         <%= @post.title %>
-      <% end %>
+      </a>
       <i title="精华帖" class="fa fa-diamond"></i>
     </div>
     <div class="info">
