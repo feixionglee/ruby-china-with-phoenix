@@ -44,6 +44,6 @@ pre_erlang_clean_compile() {
     brunch build --production
 
     # run your custom task
-    # APP='$APP' MIX_ENV='$TARGET_MIX_ENV' $MIX_CMD phoenix.digest $SILENCE
+    APP='$APP' MIX_ENV='$TARGET_MIX_ENV' $MIX_CMD phoenix.digest $SILENCE
   "
 }
