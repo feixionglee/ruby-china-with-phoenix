@@ -15,10 +15,6 @@ msgstr ""
 msgid "Welcome to %{name}"
 msgstr ""
 
-#: web/templates/shared/header.html.eex:18
-msgid "ask"
-msgstr ""
-
 #: web/templates/shared/header.html.eex:19
 msgid "jobs"
 msgstr ""
@@ -27,15 +23,11 @@ msgstr ""
 msgid "meetup"
 msgstr ""
 
-#: web/templates/shared/header.html.eex:21
-msgid "nodes"
-msgstr ""
-
 #: web/templates/shared/header.html.eex:16
 msgid "topics"
 msgstr ""
 
-#: web/templates/shared/header.html.eex:17
+#: web/templates/shared/header.html.eex:21
 msgid "wiki"
 msgstr ""
 
@@ -43,10 +35,14 @@ msgstr ""
 msgid "Edit %{Post}"
 msgstr ""
 
-#: web/templates/post/form.html.eex:21
+#: web/templates/post/form.html.eex:22
 msgid "Post Content"
 msgstr ""
 
-#: web/templates/post/form.html.eex:27
+#: web/templates/post/form.html.eex:32
 msgid "Submit"
+msgstr ""
+
+#: web/templates/post/_topic.html.eex:17
+msgid "comments"
 msgstr ""

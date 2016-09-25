@@ -13,11 +13,7 @@
 
       <div class="panel-body">
         <%= for post <- @posts do %>
-          <%= if is_nil(post.url) do %>
-            <%= render "_topic.html", conn: @conn, post: post %>
-          <% else %>
-            <%= render "_link.html", conn: @conn, post: post %>
-          <% end %>
+          <%= render "_post.html", conn: @conn, post: post %>
         <% end %>
       </div>
 

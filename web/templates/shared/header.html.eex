@@ -1,6 +1,6 @@
 <header class="header">
   <nav class="navbar navbar-inverse navbar-fixed-top navbar-default">
-    <div class="container">
+    <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-menu">
           <span class="sr-only">Toggle navigation</span>
@@ -22,47 +22,46 @@
           <%=# state_link @conn, gettext("nodes"), active: :nodes, to: "/nodes" %>
         </ul>
       </div>
-        <ul class="nav navbar-nav navbar-right">
-          <%= if !@current_user do %>
-            <li><a href="/signup"> 注册 </a></li>
-            <li><a href="/signin"> 登录 </a></li>
-          <% end %>
 
-          <%= if @current_user do %>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                <%= @current_user.name%>
-                <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu" role="menu">
-                <li class="">
-                  <a href="/dancing"></a>
-                  <%= link "My home page", to: user_path(@conn, :edit, @current_user) %>
-                </li>
-                <li class=""><div class="divider"></div></li>
-                <li class=""><a href="/account/edit">Account Profile</a></li>
-                <li class=""><a href="/notes">Notes</a></li><li class=""><a href="/dancing/favorites">Favorites</a></li>
-              </ul>
-            </li>
-            <li><a href="/signout"> 退出 </a></li>
-          <% end %>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li class="nav-search hidden-xs hidden-sm">
-            <form class="navbar-form form-search active" action="/search" method="GET">
-              <div class="form-group">
-                <input class="form-control" name="q" type="text" value="" placeholder="搜索本站内容">
-              </div>
-              <i class="fa btn-search fa-search"></i>
-            </form>
+      <ul class="nav navbar-nav navbar-right">
+        <%= if !@current_user do %>
+          <li><a href="/signup"> 注册 </a></li>
+          <li><a href="/signin"> 登录 </a></li>
+        <% end %>
+
+        <%= if @current_user do %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+              <%= @current_user.name%>
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li class="">
+                <a href="/dancing"></a>
+                <%= link "My home page", to: user_path(@conn, :edit, @current_user) %>
+              </li>
+              <li class=""><div class="divider"></div></li>
+              <li class=""><a href="/account/edit">Account Profile</a></li>
+              <li class=""><a href="/notes">Notes</a></li><li class=""><a href="/dancing/favorites">Favorites</a></li>
+            </ul>
           </li>
-          <li class="notification-count">
-            <a href="/notifications" class="" title="通知"><i class="fa fa-bell"></i><span class="count">0</span></a>
-          </li>
-        </ul>
+          <li><a href="/signout"> 退出 </a></li>
+        <% end %>
+      </ul>
 
-
-
+      <ul class="nav navbar-nav navbar-right">
+        <li class="nav-search hidden-xs hidden-sm">
+          <form class="navbar-form form-search active" action="/search" method="GET">
+            <div class="form-group">
+              <input class="form-control" name="q" type="text" value="" placeholder="搜索本站内容">
+            </div>
+            <i class="fa btn-search fa-search"></i>
+          </form>
+        </li>
+        <li class="notification-count">
+          <a href="/notifications" class="" title="通知"><i class="fa fa-bell"></i><span class="count">0</span></a>
+        </li>
+      </ul>
     </div>
   </nav>
 </header>

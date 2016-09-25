@@ -4,7 +4,7 @@ require Tirexs.Search
 defmodule Elixirer.SearchController do
   use Elixirer.Web, :controller
 
-  use ScrivenerElasticsearch, page_size: 2
+  use ScrivenerElasticsearch, page_size: 10
 
   import Tirexs.Search
 

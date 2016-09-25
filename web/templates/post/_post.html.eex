@@ -1,0 +1,5 @@
+<%= if is_nil(@post.url) do %>
+  <%= render "_topic.html", conn: @conn, post: @post %>
+<% else %>
+  <%= render "_link.html", conn: @conn, post: @post %>
+<% end %>

@@ -14,10 +14,6 @@ msgstr ""
 msgid "Welcome to %{name}"
 msgstr "欢迎 %{name}"
 
-#: web/templates/shared/header.html.eex:18
-msgid "ask"
-msgstr "问答"
-
 #: web/templates/shared/header.html.eex:19
 msgid "jobs"
 msgstr "招聘"
@@ -26,15 +22,11 @@ msgstr "招聘"
 msgid "meetup"
 msgstr "线下活动"
 
-#: web/templates/shared/header.html.eex:21
-msgid "nodes"
-msgstr "节点"
-
 #: web/templates/shared/header.html.eex:16
 msgid "topics"
 msgstr "帖子"
 
-#: web/templates/shared/header.html.eex:17
+#: web/templates/shared/header.html.eex:21
 msgid "wiki"
 msgstr "资源"
 
@@ -42,10 +34,14 @@ msgstr "资源"
 msgid "Edit %{Post}"
 msgstr "编辑帖子"
 
-#: web/templates/post/form.html.eex:21
+#: web/templates/post/form.html.eex:22
 msgid "Post Content"
 msgstr "正文"
 
-#: web/templates/post/form.html.eex:27
+#: web/templates/post/form.html.eex:32
 msgid "Submit"
 msgstr "提交"
+
+#: web/templates/post/_topic.html.eex:17
+msgid "comments"
+msgstr "评论"

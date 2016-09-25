@@ -14,6 +14,8 @@
     <div class="info">
       <a class="node" href="/posts?category=<%= @post.category %>"><%= @post.category %></a>
       •
+      <a class="node" href="<%= post_path(@conn, :show, @post) %>"><%= @post.comments_count %> <%= gettext("comments") %></a>
+      •
       <a data-name="mizuhashi" href="/users/<%= @post.user.name %>"><%= @post.user.name %></a>
       <span class="hidden-mobile">
         •
@@ -24,8 +26,5 @@
         <% end %>
       </span>
     </div>
-  </div>
-  <div class="count media-right">
-      <a class="state-false state-true" href="/topics/29777#reply34"><%= @post.comments_count %></a>
   </div>
 </div>

@@ -2,5 +2,5 @@ require Scrivener.Config
 
 defmodule Elixirer.Repo do
   use Ecto.Repo, otp_app: :elixirer
-  use Scrivener, page_size: 2
+  use Scrivener, page_size: 10
 end
