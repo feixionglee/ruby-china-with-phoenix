@@ -1,5 +1,7 @@
 APP="elixirer"
 
+AUTO_VERSION=git-revision+branch-unless-master
+
 BUILD_HOST="build.remote-china.org"
 BUILD_USER="deploy"
 BUILD_AT="/tmp/edeliver/builds/elixirer"
